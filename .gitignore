@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Large WordPress Backups
+u703004442*
+*.tar.gz
+*.sql.gz

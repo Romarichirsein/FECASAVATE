@@ -168,52 +168,57 @@ export const blogArticles: BlogArticle[] = [
   {
     id: 'art1',
     title: 'Retour sur la Finale du Championnat National : Série C et B pour Minimes, Cadets, Juniors et Seniors',
-    excerpt: 'La salle des fêtes de la mairie de Yaoundé 5 accueille les combats pour la finale nationale dans une ferveur inégalée...',
-    content: 'La mythique salle des fêtes de la mairie de Yaoundé 5 s’est transformée en un chaudron bouillonnant à l’occasion de la grande finale nationale de Savate. Les séries C (assaut technique) et B (combat d’intensité moyenne) ont donné lieu à des affrontements de haute voltige. Chez les Minimes et Cadets, la vivacité gestuelle a impressionné le comité de sélection de la Fecasavate, tandis que les Seniors ont combattu avec un sens tactique aiguisé sous les applaudissements des familles et des officiels du Ministère des Sports.',
-    date: '10 Avril 2026',
+    excerpt: 'La salle des fêtes de la mairie de Yaoundé 5 s’apprête à vibrer au rythme des combats lors de la finale du Championnat National, qui rassemblera les meilleurs jeunes talents et athlètes confirmés du pays...',
+    content: '<p>La salle des fêtes de la mairie de Yaoundé 5 s’apprête à vibrer au rythme des combats lors de la finale du Championnat National Retour de la Série C et B, qui se tiendra le 7 juillet 2024 à partir de 10h30. Cet événement tant attendu rassemblera les meilleurs jeunes talents et athlètes confirmés du pays, offrant un spectacle sportif exceptionnel à ne pas manquer.</p><h4>Un Rendez-vous Sportif de Haut Niveau</h4><p>Ce championnat national est une occasion unique de voir en action les athlètes des catégories minimes, cadets, juniors et seniors. Chacune de ces catégories présente des compétiteurs qui ont montré des performances remarquables tout au long de l’année, se qualifiant ainsi pour cette finale prestigieuse.</p><h4>Programme de la Journée</h4><p>La journée débutera à 10h30 avec les premiers combats des minimes, suivis des catégories cadets, juniors et enfin seniors. Chaque match sera un véritable test de compétence, de stratégie et de résilience, promettant des duels palpitants et des retournements de situation.</p><h4>Les Catégories en Compétition</h4><ul><li><strong>Minimes</strong> : Les jeunes athlètes de cette catégorie sont l’avenir du sport. Leur énergie et leur passion pour la compétition seront à l’honneur.</li><li><strong>Cadets</strong> : Cette catégorie met en lumière les talents émergents, prêts à prouver leur valeur.</li><li><strong>Juniors</strong> : Les compétiteurs juniors offrent des combats dynamiques et techniques.</li><li><strong>Seniors</strong> : Les athlètes seniors apporteront une dose d’expérience et de maîtrise technique.</li></ul>',
+    date: '18 Août 2020',
     category: 'Compétition Nationale',
     author: 'Fabrice Ngalieu',
-    readTime: '4 min'
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2024/07/Sans-titre-1.jpg',
+    readTime: '3 min'
   },
   {
     id: 'art2',
-    title: 'Séance d’initiation populaire Savate Forme et Savate Défense du 16 Mars 2024',
-    excerpt: 'Retour sur le rassemblement à l’esplanade omnisports de Yaoundé pour découvrir la savate bien-être et sécurité...',
-    content: 'Le samedi 16 mars 2024, à partir de 16h30, l’esplanade sportive de Yaoundé a vibré au son des basses énergisantes de l’initiation publique collective de Savate Forme. Plus d’une centaine de participantes et participants se sont réunis sous la houlette de coachs fédéraux certifiés. Au programme également : un atelier pratique de Savate Défense détaillant l’art stratégique de l’esquive et des dégagements face à des saisies d’agression, mettant en scène des jeux de rôles et une sensibilisation à l’attitude psychologique d’évitement du danger.',
-    date: '18 Mars 2024',
+    title: 'Retour sur la Séance de Découverte en Savate Forme et Savate Défense du 16 Mars 2024',
+    excerpt: 'Le 16 mars 2024, à partir de 16h30, une séance de découverte en Savate Forme et Savate Défense a eu lieu, offrant aux participants une introduction enrichissante à ces disciplines dynamiques...',
+    content: '<p>Le 16 mars 2024, à partir de 16h30, une séance de découverte en Savate Forme et Savate Défense a eu lieu, offrant aux participants une introduction enrichissante à ces disciplines dynamiques. Organisée par des experts du domaine, cette session a attiré un large public, allant des novices curieux aux pratiquants confirmés souhaitant enrichir leurs connaissances et leurs compétences.</p><h4>Une Introduction à la Savate Forme</h4><p>La première partie de la séance était dédiée à la Savate Forme, une version de la savate axée sur le fitness et le bien-être. Cette discipline combine les techniques de la savate avec des exercices de cardio et de renforcement musculaire, offrant un entraînement complet et accessible à tous.</p><h4>Découverte de la Savate Défense</h4><p>La seconde partie de l’événement a mis l’accent sur la Savate Défense, une discipline orientée vers l’autodéfense. Les participants ont eu l’occasion d’apprendre des techniques de défense contre diverses attaques, en utilisant les mouvements de la savate de manière pragmatique et efficace.</p><h4>Un Événement Inclusif et Éducatif</h4><p>Les retours des participants ont été extrêmement positifs. Beaucoup ont exprimé leur satisfaction quant à la qualité de l’encadrement et à l’atmosphère motivante de la séance.</p>',
+    date: '18 Août 2020',
     category: 'Initiation Grand Public',
     author: 'Fabrice Ngalieu',
-    readTime: '3 min'
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2024/07/IMG_2310.jpg',
+    readTime: '2 min'
   },
   {
     id: 'art3',
-    title: '27ème Championnat Africain de Savate au Caire : Succès et consécration continentale',
-    excerpt: 'La savate camerounaise s’apprête à asseoir son leadership de fer en Égypte pour le sommet continental...',
-    content: 'Les Lions Indomptables de la Savate ont foulé le sol du Caire (Égypte) pour y disputer les ceintures continentales lors d’une 27ème édition mémorable du Championnat d’Afrique. Menée par le champion du monde Akouan Pharelle et la médaillée mondiale Yanga Flora, la délégation camerounaise a remporté de multiples distinctions en assaut et combat, hissant le drapeau du Cameroun au sommet du classement général continental africain face à de redoutables tireurs nord-africains. Un triomphe fêté par la diaspora camerounaise locale.',
-    date: '25 Janvier 2024',
+    title: '27ème Championnat Africain de Savate au Caire : Un Événement à Ne Pas Manquer',
+    excerpt: 'Le monde de la savate s’apprête à vivre un événement majeur en 2024. Le 27ème Championnat Africain de Savate se tiendra au Caire, en Égypte, du 9 au 11 septembre 2024...',
+    content: '<p>Le monde de la savate, cette discipline française de boxe pieds-poings, s’apprête à vivre un événement majeur en 2024. Le 27ème Championnat Africain de Savate se tiendra au Caire, en Égypte, du 9 au 11 septembre 2024. Cet événement promet de rassembler les meilleurs athlètes de savate du continent africain.</p><h4>Les Meilleurs Athlètes du Continent en Compétition</h4><p>Le Championnat Africain de Savate attirera les meilleurs athlètes du continent, venus défendre les couleurs de leur pays et concourir pour le titre de champion africain. Les compétiteurs se sont préparés pendant des mois, voire des années, pour cet événement.</p><h4>Un Programme Chargé et Diversifié</h4><p>Pendant trois jours, le championnat proposera un programme chargé avec des combats dans différentes catégories de poids et de niveaux. Les spectateurs pourront assister à des matchs éliminatoires, des demi-finales et des finales palpitantes. En plus des compétitions, des démonstrations et des ateliers seront organisés pour promouvoir la savate.</p><h4>Promouvoir la Savate en Afrique</h4><p>Cet événement est également une occasion importante pour promouvoir la savate en Afrique. La savate gagne en popularité sur le continent, et des événements comme celui-ci sont essentiels pour inspirer la prochaine génération de pratiquants.</p>',
+    date: '18 Août 2020',
     category: 'International',
     author: 'Fabrice Ngalieu',
-    readTime: '5 min'
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2020/08/yaounde-5-2.jpg',
+    readTime: '2 min'
   },
   {
     id: 'art4',
-    title: 'Ouverture des Salles d’Entraînement de la Fecasavate : Un Nouveau Chapitre',
-    excerpt: 'La fédération annonce l’inauguration de structures d’entraînement modernes adaptées à tous les âges...',
-    content: 'C’est officiel : la FECASAVATE a inauguré son tout nouveau pôle d’entraînement d’excellence à Yaoundé (Tropicana). Dotée de tapis de combat de haute densité, de sacs de frappe professionnels, et d’un ring surélevé conforme aux normes de la FISav (Fédération Internationale de Savate), cette salle accueillera désormais les séances quotidiennes des Lions Indomptables ainsi que des sections loisirs pour enfants, adolescents, et adultes désirant maintenir une forme athlétique irréprochable.',
-    date: '14 Janvier 2024',
+    title: 'Ouverture des Salles de Sport de la Fecasavate : Un Nouveau Chapitre pour Tous',
+    excerpt: 'La Fédération Camerounaise de Savate (Fecasavate) est ravie d’annoncer l’ouverture de ses salles de sport pour les enfants, les jeunes et les adultes...',
+    content: '<p>La Fédération Camerounaise de Savate (Fecasavate) est ravie d’annoncer l’ouverture de ses salles de sport pour les enfants, les jeunes et les adultes. Nos installations sont désormais accessibles du lundi au samedi, de 06h30 à 21h00, et le dimanche, de 06h30 à 15h00.</p><h4>Horaires Étendus pour une Accessibilité Maximale</h4><p>Consciente de l’importance de rendre la savate accessible à tous, la Fecasavate a décidé d’ouvrir ses portes sur une large plage horaire. Cette initiative vise à permettre à chacun, quel que soit son emploi du temps, de profiter des bienfaits de la savate.</p><h4>Des Installations de Qualité</h4><p>Nos salles de sport sont équipées de matériel de haute qualité pour assurer un entraînement efficace et sécurisé. Que vous soyez débutant ou athlète confirmé, vous trouverez tout le nécessaire pour progresser dans votre pratique de la savate.</p><h4>Pour Tous les Niveaux et Tous les Âges</h4><p>La Fecasavate accueille des pratiquants de tous niveaux, des débutants aux athlètes de compétition. Des cours adaptés sont proposés pour les différentes tranches d’âge, garantissant une progression harmonieuse pour chaque pratiquant.</p>',
+    date: '18 Août 2020',
     category: 'Vie Fédérale',
     author: 'Fabrice Ngalieu',
-    readTime: '3 min'
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2020/08/LOGO-FCSDA-NEW.png',
+    readTime: '2 min'
   },
   {
     id: 'art5',
     title: 'Restez concentrés pour les nouveaux articles de la Fédération',
-    excerpt: 'Notre pôle de rédaction de la Fecasavate reste mobilisé pour les championnats nationaux de fin d’année...',
-    content: 'Le pôle d’information Fecasavate travaille en continu avec le Ministère des Sports et de l’Éducation Physique (MINSEP) et la CRTV pour vous proposer des reportages détaillés, des vidéos d’entraînements à huis clos des athlètes nationaux, et des interviews exclusives de nos champions du monde d’Afrique Centrale. Activez vos notifications sur notre site pour être averti instantanément des nouveaux communiqués sportifs !',
-    date: '02 Décembre 2023',
+    excerpt: 'Notre pôle de rédaction de la Fecasavate reste mobilisé pour les championnats nationaux de fin d’année. Activez vos notifications pour ne rien manquer...',
+    content: '<p>Le pôle d’information Fecasavate travaille en continu avec le Ministère des Sports et de l’Éducation Physique (MINSEP) et la CRTV pour vous proposer des reportages détaillés, des vidéos d’entraînements à huis clos des athlètes nationaux, et des interviews exclusives de nos champions du monde d’Afrique Centrale.</p><p>Activez vos notifications sur notre site pour être averti instantanément des nouveaux communiqués sportifs, résultats de compétitions et actualités fédérales !</p>',
+    date: '18 Août 2020',
     category: 'Annonce',
     author: 'Fabrice Ngalieu',
-    readTime: '2 min'
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-10-a-13.11.21_c1e312c6.jpg',
+    readTime: '1 min'
   }
 ];
 
@@ -268,15 +273,39 @@ export const championsList: Member[] = [
   },
   {
     id: 'm5',
-    firstName: 'MANDENG',
-    lastName: 'BAKADAL',
+    firstName: 'Bakadal',
+    lastName: 'Mandeng',
     role: 'dirigeant',
     gender: 'M',
     category: 'Legende',
-    club: 'Cabinet Fédéral Fecasavate',
-    specialty: 'Président Fédéral',
-    achievements: ['Président de la Fecasavate', 'Négociateur des accords internationaux FISav'],
-    imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80'
+    club: 'Nfsmma-savate Yaoundé',
+    specialty: 'Président FECASAVATE',
+    achievements: ['Président de la FECASAVATE', '25 tournois disputés', '8 médailles obtenues', 'Négociateur des accords internationaux FISav'],
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2024/07/CAMPAGNE-president.jpg'
+  },
+  {
+    id: 'm9',
+    firstName: 'Patricia',
+    lastName: 'Eben',
+    role: 'tireur',
+    gender: 'F',
+    category: 'Benjamin',
+    club: 'GHT Douala',
+    specialty: 'Savate Assaut',
+    achievements: ['5 fois Championne du Tournoi de Douala', '5 médailles obtenues', '5 tournois disputés'],
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/2020/08/photo_2024-07-02_13-58-50.jpg'
+  },
+  {
+    id: 'm10',
+    firstName: 'Maxime Plaisir',
+    lastName: 'Mbile',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Professionnel',
+    club: 'National Fighting Yaoundé',
+    specialty: 'Savate Pro & Combat',
+    achievements: ['12 tournois nationaux et africains disputés', '9 médailles de Savate', '8 ans d\'expérience en Savate et Kick-boxing'],
+    imageUrl: 'https://www.fecasavate.cm/wp-content/uploads/ultimatemember/3/profile_photo.jpg'
   },
   {
     id: 'm6',
