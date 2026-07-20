@@ -17,6 +17,7 @@ import Champions from './pages/Champions';
 import Boutique from './pages/Boutique';
 import Contact from './pages/Contact';
 import Inscription from './pages/Inscription';
+import Licences from './pages/Licences';
 import { UserSession } from './types';
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#/', '');
-      const validPages = ['accueil', 'about', 'blog', 'formation', 'palmares', 'champions', 'boutique', 'contact', 'espace-prive'];
+      const validPages = ['accueil', 'about', 'blog', 'formation', 'licences', 'palmares', 'champions', 'boutique', 'contact', 'espace-prive'];
       if (hash && validPages.includes(hash)) {
         setCurrentPage(hash);
       } else {
@@ -67,6 +68,8 @@ export default function App() {
         return <Blog />;
       case 'formation':
         return <Formation onPageChange={handlePageChange} />;
+      case 'licences':
+        return <Licences />;
       case 'palmares':
         return <Palmares />;
       case 'champions':

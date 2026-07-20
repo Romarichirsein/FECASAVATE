@@ -44,6 +44,7 @@ export default function Navbar({
     { id: 'about', label: t('nav.about') },
     { id: 'blog', label: t('nav.blog') },
     { id: 'formation', label: t('nav.formation') },
+    { id: 'licences', label: t('nav.licences') },
     { id: 'palmares', label: t('nav.palmares') },
     { id: 'champions', label: t('nav.champions') },
     { id: 'boutique', label: t('nav.boutique') },

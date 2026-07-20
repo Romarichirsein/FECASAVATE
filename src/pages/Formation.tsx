@@ -310,7 +310,165 @@ export default function Formation({ onPageChange }: FormationProps) {
         </div>
       </section>
 
-      {/* 4. CONVERSION ENROLLMENT FORM */}
+      {/* 4. PROJET DE NOUVELLE RÉGLEMENTATION DES PASSAGES DE GRADE */}
+      <section className="bg-feca-night border border-slate-800 p-6 sm:p-10 rounded-3xl space-y-8 shadow-2xl relative overflow-hidden">
+        
+        {/* Decorative Seal / Header */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-850 pb-6">
+          <div>
+            <span className="text-[10px] font-mono text-feca-gold font-bold uppercase tracking-widest bg-feca-gold/10 border border-feca-gold/30 px-3 py-1 rounded-md inline-block mb-2">
+              TEXTE RÉGLEMENTAIRE OFFICIEL
+            </span>
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight">
+              Projet de nouvelle réglementation des passages de grade
+            </h2>
+            <span className="text-xs text-slate-400 font-mono block mt-1">
+              Fédération Camerounaise de Savate Boxe Française (FECASAVAT)
+            </span>
+          </div>
+
+          <div className="px-4 py-2 bg-slate-950 border border-slate-800 rounded-xl text-right shrink-0">
+            <span className="text-[9px] font-mono text-slate-500 block uppercase">DIRECTION TECHNIQUE NATIONALE</span>
+            <span className="text-xs font-bold text-emerald-400 font-mono">Homologation & Certification</span>
+          </div>
+        </div>
+
+        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans bg-slate-950/60 p-4 rounded-2xl border border-slate-850">
+          Dans le cadre de l’harmonisation et de la professionnalisation des formations et des passages de grade, la Fédération Camerounaise de Savate Boxe Française met en place une nouvelle réglementation qui entrera prochainement en vigueur.
+        </p>
+
+        {/* ARTICLES GRID */}
+        <div className="space-y-6">
+          
+          {/* ARTICLE 1 */}
+          <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-4">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-feca-gold" />
+              <h3 className="font-display font-extrabold text-sm uppercase text-white">
+                Article 1 – Grades fédéraux
+              </h3>
+            </div>
+            
+            <p className="text-xs text-slate-400">
+              Les grades officiels de la Savate Boxe Française reconnus sur le territoire national sont les suivants :
+            </p>
+
+            {/* GLOVES BADGES GRID */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+              <div className="p-2.5 bg-blue-950/40 border border-blue-500/30 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-blue-500 shrink-0" />
+                <span className="text-xs font-bold text-blue-200">Gant bleu</span>
+              </div>
+              <div className="p-2.5 bg-emerald-950/40 border border-emerald-500/30 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-emerald-500 shrink-0" />
+                <span className="text-xs font-bold text-emerald-200">Gant vert</span>
+              </div>
+              <div className="p-2.5 bg-red-950/40 border border-red-500/30 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-500 shrink-0" />
+                <span className="text-xs font-bold text-red-200">Gant rouge</span>
+              </div>
+              <div className="p-2.5 bg-slate-900 border border-slate-600 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-white shrink-0" />
+                <span className="text-xs font-bold text-white">Gant blanc</span>
+              </div>
+              <div className="p-2.5 bg-amber-950/40 border border-amber-500/30 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-amber-400 shrink-0" />
+                <span className="text-xs font-bold text-amber-200">Gant jaune</span>
+              </div>
+              <div className="p-2.5 bg-slate-800 border border-slate-400 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-gradient-to-r from-slate-300 to-slate-100 shrink-0" />
+                <span className="text-xs font-bold text-slate-100">Gant d’Argent (GAT)</span>
+              </div>
+              <div className="col-span-2 p-2.5 bg-gradient-to-r from-amber-950/50 via-slate-900 to-yellow-950/50 border border-feca-gold/40 rounded-xl flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-gradient-to-r from-amber-600 via-slate-300 to-yellow-400 shrink-0 animate-pulse" />
+                <span className="text-xs font-bold text-feca-gold">Gants de bronze, d’argent et d’or de compétition</span>
+              </div>
+            </div>
+
+            <p className="text-[11px] text-slate-400 italic font-mono border-t border-slate-900 pt-2">
+              • L’attribution de l’ensemble de ces grades est exclusivement réglementée par la Fédération Camerounaise de Savate Boxe Française.
+            </p>
+          </div>
+
+          {/* ARTICLE 2 & 3 GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-feca-red" />
+                Article 2 – Organisation des formations
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                Les formations et les passages de grade seront organisés au niveau des Ligues, sous l’autorité de la Direction Technique Nationale (DTN) et de la Commission Fédérale des Grades.
+              </p>
+              <p className="text-[11px] text-slate-400 leading-relaxed font-sans pt-1">
+                La Direction Technique Nationale désignera les formateurs, les examinateurs et les membres des jurys habilités à conduire les formations et à évaluer les candidats.
+              </p>
+            </div>
+
+            <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-feca-red" />
+                Article 3 – Validation des grades
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                Aucun professeur, moniteur, président de Ligue, dirigeant de club ou responsable régional n’est habilité à délivrer, signer ou valider seul un diplôme ou un grade fédéral.
+              </p>
+              <p className="text-[11px] text-slate-400 leading-relaxed font-sans pt-1">
+                Tous les passages de grade seront évalués par la Commission Fédérale des Grades et la DTN, seules autorités compétentes. Tous les diplômes porteront la validation officielle et seront enregistrés dans les archives fédérales.
+              </p>
+            </div>
+          </div>
+
+          {/* ARTICLE 4 & 5 GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-feca-gold" />
+                Article 4 – Modalités
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                Les programmes de formation, les conditions d’accès, les modalités d’évaluation, le calendrier des sessions ainsi que les tarifs des formations et des examens seront fixés exclusivement par la Fédération et communiqués officiellement.
+              </p>
+              <p className="text-[11px] text-feca-red font-mono pt-1">
+                ⚠️ Toute formation ou passage de grade hors réglementation ne pourra faire l’objet d’aucune reconnaissance fédérale.
+              </p>
+            </div>
+
+            <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-feca-gold" />
+                Article 5 – Homologation des diplômes
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                Tous les titulaires d’un diplôme de moniteur, d’instructeur ou d’un diplôme d’enseignement exerçant au Cameroun devront obligatoirement faire homologuer leur diplôme auprès de la FECASAVATE.
+              </p>
+              <p className="text-[11px] text-emerald-400 font-mono pt-1">
+                ✓ Seuls les moniteurs inscrits sur la liste officielle homologuée seront habilités à encadrer et participer aux jurys.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* DISPOSITIONS FINALES & SIGNATURE */}
+        <div className="pt-4 border-t border-slate-850 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 text-center md:text-left">
+            <span className="text-[10px] font-mono text-slate-400 uppercase font-bold">Dispositions Finales</span>
+            <p className="text-[11px] text-slate-400 max-w-xl leading-relaxed font-sans">
+              Cette réforme garantit une organisation uniforme, préserve la valeur des grades fédéraux et assure la crédibilité de la Savate au Cameroun. Entrée en vigueur fixée par le Comité Exécutif.
+            </p>
+          </div>
+
+          <div className="p-4 bg-slate-950 border border-slate-800 rounded-2xl text-center shrink-0 space-y-1">
+            <span className="text-[9px] font-mono text-slate-500 uppercase block">HOMOLOGATION DTN</span>
+            <span className="font-display font-black text-sm text-feca-gold uppercase block">Akouan Pharelle</span>
+            <span className="text-[10px] text-slate-400 font-mono block">Directeur Technique National</span>
+          </div>
+        </div>
+
+      </section>
+
+      {/* 5. CONVERSION ENROLLMENT FORM */}
       <section className="bg-gradient-to-tr from-indigo-950/20 via-slate-900/60 to-slate-950/80 border border-slate-800 p-8 sm:p-12 rounded-3xl text-center space-y-6 max-w-4xl mx-auto">
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           Session Pro 2026/2027
