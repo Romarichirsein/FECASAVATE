@@ -76,7 +76,7 @@ export default function Boutique() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           Boutique Officielle de la Savate
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           La Boutique des Lions
         </h1>
         <p className="text-slate-300 text-sm">
@@ -313,7 +313,7 @@ export default function Boutique() {
             >
               <div className="flex items-center gap-2">
                 <CreditCard className="w-5 h-5 text-feca-gold shrink-0" />
-                <h3 className="font-display font-black text-sm uppercase text-white tracking-wider">
+                <h3 className="font-display font-black text-sm uppercase text-slate-100 tracking-wider">
                   Validation de la Réservation Fédérale
                 </h3>
               </div>
@@ -393,7 +393,7 @@ export default function Boutique() {
               </div>
 
               <div>
-                <h3 className="font-display font-black text-white text-base uppercase">
+                <h3 className="font-display font-black text-slate-100 text-base uppercase">
                   Commande Transmise !
                 </h3>
                 <p className="text-xs text-slate-350 mt-1 font-sans leading-relaxed">

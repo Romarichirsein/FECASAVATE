@@ -1,26 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Premium Sports Theme Color Config - Light Mode (Default) */
+  --feca-dark: #FFFFFF;
+  --feca-blue: #F1F5F9;
+  --feca-night: #F8FAFC;
+  --feca-red: #E11D48;
+  --feca-gold: #D97706; /* Slightly darker gold for accessibility in light mode */
+
+  /* Responsive Slate overrides for panels, borders, and text */
+  --slate-950: #FFFFFF;
+  --slate-900: #F8FAFC;
+  --slate-850: #E2E8F0;
+  --slate-800: #E2E8F0;
+  --slate-700: #CBD5E1;
+  --slate-600: #475569;
+
+  --slate-100: #0F172A;
+  --slate-200: #1E293B;
+  --slate-300: #334155;
+  --slate-400: #475569;
+}
+
+.dark {
+  /* Premium Sports Theme Color Config - Dark Mode (Original) */
+  --feca-dark: #070B19;
+  --feca-blue: #0A192F;
+  --feca-night: #0E1630;
+  --feca-red: #E11D48;
+  --feca-gold: #F59E0B;
+
+  /* Responsive Slate overrides - Dark Mode */
+  --slate-950: #020617;
+  --slate-900: #0F172A;
+  --slate-850: #1E293B;
+  --slate-800: #1E293B;
+  --slate-700: #334155;
+  --slate-600: #475569;
+
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+}
+
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Premium Sports Theme Color Config */
-  --color-feca-dark: #070B19;
-  --color-feca-blue: #0A192F;
-  --color-feca-night: #0E1630;
-  --color-feca-red: #E11D48;
-  --color-feca-gold: #F59E0B;
+  /* Premium Sports Theme Color Config bound to CSS variables */
+  --color-feca-dark: var(--feca-dark);
+  --color-feca-blue: var(--feca-blue);
+  --color-feca-night: var(--feca-night);
+  --color-feca-red: var(--feca-red);
+  --color-feca-gold: var(--feca-gold);
+
+  /* Overriding standard Tailwind slate scale for automatic theme switching */
+  --color-slate-950: var(--slate-950);
+  --color-slate-900: var(--slate-900);
+  --color-slate-850: var(--slate-850);
+  --color-slate-800: var(--slate-800);
+  --color-slate-700: var(--slate-700);
+  --color-slate-600: var(--slate-600);
+  --color-slate-400: var(--slate-400);
+  --color-slate-300: var(--slate-300);
+  --color-slate-200: var(--slate-200);
+  --color-slate-100: var(--slate-100);
 }
 
 body {
-  background-color: #070B19;
-  color: #F8FAFC;
+  background-color: var(--feca-dark);
+  color: var(--slate-100);
   font-family: var(--font-sans);
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: #1E293B #070B19;
+  scrollbar-color: var(--slate-800) var(--feca-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar styling */
@@ -28,14 +87,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070B19;
+  background: var(--feca-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: var(--slate-800);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E11D48;
+  background: var(--feca-red);
 }
 
 /* Custom modern utilities */

@@ -117,7 +117,7 @@ export default function Formation({ onPageChange }: FormationProps) {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? 'Académie Nationale de Formation' : 'National Referee Academy'}
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           {language === 'fr' ? 'Devenir Arbitre de Savate' : 'Become a Savate Referee'}
         </h1>
         <p className="text-slate-300 text-sm">
@@ -135,7 +135,7 @@ export default function Formation({ onPageChange }: FormationProps) {
               <CheckCircle className="w-5 h-5 text-emerald-400" />
             </div>
             
-            <h4 className="font-display font-extrabold text-base text-white">
+            <h4 className="font-display font-extrabold text-base text-slate-100">
               {b.title}
             </h4>
 
@@ -154,7 +154,7 @@ export default function Formation({ onPageChange }: FormationProps) {
           <span className="text-[10px] font-mono font-bold tracking-widest text-feca-gold block uppercase">
             {language === 'fr' ? 'PROGRAMME DE CERTIFICATION' : 'CERTIFICATION PROGRAMME'}
           </span>
-          <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase mb-5 leading-tight">
+          <h3 className="font-display font-black text-xl sm:text-2xl text-slate-100 uppercase mb-5 leading-tight">
             {language === 'fr' ? 'Les 6 Modules Académiques' : 'The 6 Academic Modules'}
           </h3>
 
@@ -214,7 +214,7 @@ export default function Formation({ onPageChange }: FormationProps) {
                     <span className="text-[9px] font-mono text-feca-gold font-bold uppercase block tracking-wider animate-pulse">
                       {language === 'fr' ? '• FLUX CERTIFIÉ ACADÉMIE YAOUNDÉ LIVE' : '• CERTIFIED ACADEMY YAOUNDE LIVE FEED'}
                     </span>
-                    <h4 className="font-display font-medium text-xs text-white mt-1">
+                    <h4 className="font-display font-medium text-xs text-slate-100 mt-1">
                       {language === 'fr' ? 'Visualisation :' : 'Viewing:'} {activePartData.title}
                     </h4>
                     <p className="text-[10px] text-slate-400 mt-1.5 font-sans leading-relaxed">
@@ -319,7 +319,7 @@ export default function Formation({ onPageChange }: FormationProps) {
             <span className="text-[10px] font-mono text-feca-gold font-bold uppercase tracking-widest bg-feca-gold/10 border border-feca-gold/30 px-3 py-1 rounded-md inline-block mb-2">
               TEXTE RÉGLEMENTAIRE OFFICIEL
             </span>
-            <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight">
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase tracking-tight">
               Projet de nouvelle réglementation des passages de grade
             </h2>
             <span className="text-xs text-slate-400 font-mono block mt-1">
@@ -344,7 +344,7 @@ export default function Formation({ onPageChange }: FormationProps) {
           <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-4">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-feca-gold" />
-              <h3 className="font-display font-extrabold text-sm uppercase text-white">
+              <h3 className="font-display font-extrabold text-sm uppercase text-slate-100">
                 Article 1 – Grades fédéraux
               </h3>
             </div>
@@ -393,7 +393,7 @@ export default function Formation({ onPageChange }: FormationProps) {
           {/* ARTICLE 2 & 3 GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
-              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-slate-100 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-feca-red" />
                 Article 2 – Organisation des formations
               </h3>
@@ -406,7 +406,7 @@ export default function Formation({ onPageChange }: FormationProps) {
             </div>
 
             <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
-              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-slate-100 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-feca-red" />
                 Article 3 – Validation des grades
               </h3>
@@ -422,7 +422,7 @@ export default function Formation({ onPageChange }: FormationProps) {
           {/* ARTICLE 4 & 5 GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
-              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-slate-100 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-feca-gold" />
                 Article 4 – Modalités
               </h3>
@@ -435,7 +435,7 @@ export default function Formation({ onPageChange }: FormationProps) {
             </div>
 
             <div className="bg-slate-950/80 border border-slate-850 p-5 rounded-2xl space-y-2">
-              <h3 className="font-display font-extrabold text-sm uppercase text-white flex items-center gap-2">
+              <h3 className="font-display font-extrabold text-sm uppercase text-slate-100 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-feca-gold" />
                 Article 5 – Homologation des diplômes
               </h3>
@@ -473,7 +473,7 @@ export default function Formation({ onPageChange }: FormationProps) {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           Session Pro 2026/2027
         </span>
-        <h3 className="font-display font-black text-2xl uppercase text-white tracking-tight leading-none mt-1">
+        <h3 className="font-display font-black text-2xl uppercase text-slate-100 tracking-tight leading-none mt-1">
           {language === 'fr' ? 'Prêt à arbitrer le Choc de Novembre 2025 ?' : 'Ready to Referee the November 2025 Clash?'}
         </h3>
         <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto font-sans leading-relaxed">

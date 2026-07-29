@@ -79,7 +79,7 @@ export default function Blog() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? 'Chroniques de la Fédération' : 'Federation Chronologies'}
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           {language === 'fr' ? 'L’Écho de l’Arène' : 'Echoes of the Ring'}
         </h1>
         <p className="text-slate-300 text-sm">
@@ -172,7 +172,7 @@ export default function Blog() {
                     </span>
                   </div>
 
-                  <h3 className="font-display font-black text-white text-base leading-tight group-hover:text-feca-gold transition-colors duration-300 min-h-[48px] line-clamp-2">
+                  <h3 className="font-display font-black text-slate-100 text-base leading-tight group-hover:text-feca-gold transition-colors duration-300 min-h-[48px] line-clamp-2">
                     {translateItem(art, 'title')}
                   </h3>
 
@@ -252,7 +252,7 @@ export default function Blog() {
                     </span>
                   </div>
 
-                  <h2 className="font-display font-black text-xl sm:text-2xl text-white uppercase leading-snug">
+                  <h2 className="font-display font-black text-xl sm:text-2xl text-slate-100 uppercase leading-snug">
                     {translateItem(readingArticle, 'title')}
                   </h2>
                 </div>

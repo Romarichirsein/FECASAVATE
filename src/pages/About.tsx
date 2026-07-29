@@ -94,7 +94,7 @@ export default function About() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? "La Vocation d'une Naissance" : "The Vocation of a Birth"}
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           {language === 'fr' ? 'À Propos de la Fecasavate' : 'About Fecasavate'}
         </h1>
         <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -112,7 +112,7 @@ export default function About() {
           <span className="text-xs uppercase tracking-widest text-feca-gold font-mono font-bold">
             {language === 'fr' ? 'Les Piliers Fondateurs' : 'The Founding Pillars'}
           </span>
-          <h2 className="font-display font-extrabold text-2xl text-white uppercase mt-1">
+          <h2 className="font-display font-extrabold text-2xl text-slate-100 uppercase mt-1">
             {language === 'fr' ? 'Les Grandes Saisies de nos Valeurs' : 'Our Key Architectural Values'}
           </h2>
         </div>
@@ -158,7 +158,7 @@ export default function About() {
                 <div className="p-4 bg-slate-950/80 border border-slate-800 rounded-2xl mb-3">
                   {selectedValue.icon}
                 </div>
-                <h4 className="font-display font-black text-sm text-white uppercase tracking-wider">
+                <h4 className="font-display font-black text-sm text-slate-100 uppercase tracking-wider">
                   {selectedValue.title}
                 </h4>
               </div>
@@ -192,7 +192,7 @@ export default function About() {
           <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
             {language === 'fr' ? "Les Esprits d'Engagement" : "Spirits of Commitment"}
           </span>
-          <h2 className="font-display font-black text-2xl text-white uppercase mt-1">
+          <h2 className="font-display font-black text-2xl text-slate-100 uppercase mt-1">
             {language === 'fr' ? 'Les Grandes Figures Historiques' : 'Legendary Historical Figures'}
           </h2>
           <p className="text-slate-400 text-xs mt-3">
@@ -218,7 +218,7 @@ export default function About() {
                   </span>
                 </div>
                 
-                <h4 className="font-display font-extrabold text-base text-white">
+                <h4 className="font-display font-extrabold text-base text-slate-100">
                   {figure.name}
                 </h4>
                 
@@ -242,7 +242,7 @@ export default function About() {
           <span className="text-xs uppercase tracking-widest text-feca-gold font-mono font-bold">
             {language === 'fr' ? 'Les Gloires de Légende' : 'Glories of Legend'}
           </span>
-          <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase">
+          <h3 className="font-display font-black text-xl sm:text-2xl text-slate-100 uppercase">
             {language === 'fr' ? 'Sacre et Victoires Historiques Détaillées' : 'Detailed Historical Victories & Podiums'}
           </h3>
           <p className="text-slate-400 text-xs leading-relaxed max-w-xl">

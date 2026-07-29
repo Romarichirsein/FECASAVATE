@@ -107,7 +107,7 @@ export default function Licences() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? 'Secrétariat Général & Administration' : 'General Secretariat & Administration'}
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           {language === 'fr' ? 'Licences & Affiliations Officielles' : 'Official Licenses & Affiliations'}
         </h1>
         <p className="text-slate-300 text-sm max-w-2xl mx-auto leading-relaxed">
@@ -170,7 +170,7 @@ export default function Licences() {
               <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-widest bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-md inline-block">
                 {language === 'fr' ? 'DEMANDE ENREGISTRÉE AVEC SUCCÈS' : 'APPLICATION SUCCESSFULLY REGISTERED'}
               </span>
-              <h2 className="font-display font-black text-2xl uppercase text-white">
+              <h2 className="font-display font-black text-2xl uppercase text-slate-100">
                 {language === 'fr' ? 'Dossier Transmis au Secrétariat Général' : 'Dossier Transmitted to Secretariat'}
               </h2>
               <p className="text-slate-300 text-xs max-w-lg mx-auto leading-relaxed font-sans">

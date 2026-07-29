@@ -42,7 +42,7 @@ export default function Contact() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           Centre de Communication Fédéral
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           Contacter la Fecasavate
         </h1>
         <p className="text-slate-300 text-sm">
@@ -58,7 +58,7 @@ export default function Contact() {
           <span className="text-[10px] uppercase font-mono tracking-widest text-feca-gold font-bold block">
             SIÈGE ET ADMINISTRATIONS
           </span>
-          <h3 className="font-display font-black text-xl text-white uppercase mt-1 leading-tight">
+          <h3 className="font-display font-black text-xl text-slate-100 uppercase mt-1 leading-tight">
             Coordonnées Principales
           </h3>
 
@@ -123,7 +123,7 @@ export default function Contact() {
           <span className="text-[10px] uppercase font-mono tracking-widest text-feca-red font-bold block">
             COURRIER NUMÉRIQUE CERTIFIÉ
           </span>
-          <h3 className="font-display font-black text-xl text-white uppercase mt-1 mb-5">
+          <h3 className="font-display font-black text-xl text-slate-100 uppercase mt-1 mb-5">
             Formulaire de Contact
           </h3>
 
@@ -213,7 +213,7 @@ export default function Contact() {
           <span className="text-xs uppercase tracking-widest text-feca-gold font-mono font-bold">
             Vecteur de Géolocalisation
           </span>
-          <h3 className="font-display font-black text-xl text-white uppercase leading-none">
+          <h3 className="font-display font-black text-xl text-slate-100 uppercase leading-none">
             Siège National Google Maps Style
           </h3>
           <p className="text-slate-400 text-xs">
@@ -240,7 +240,7 @@ export default function Contact() {
               <MapPin size={20} className="fill-feca-red" />
             </div>
             <div>
-              <h4 className="font-display font-bold text-xs text-white">Complex Ndi - Samba</h4>
+              <h4 className="font-display font-bold text-xs text-slate-100">Complex Ndi - Samba</h4>
               <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">
                 Tropicana, Yaoundé, Cameroun • Cabinet Central de Coordination de la Boxe Française Savate
               </p>

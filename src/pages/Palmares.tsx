@@ -69,7 +69,7 @@ export default function Palmares() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? "Les Victoires de l'Histoire" : "History's Mighty Victories"}
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           {language === 'fr' ? 'Palmarès de la Savate' : 'Savate Award History'}
         </h1>
         <p className="text-slate-300 text-sm">
@@ -91,7 +91,7 @@ export default function Palmares() {
             <span className="text-[10px] text-feca-red uppercase tracking-wider font-extrabold block">
               ⭐ {language === 'fr' ? 'ÉVÉNEMENT MAJEUR HISTORIQUE' : 'HISTORIC MAJOR EVENT'}
             </span>
-            <h2 className="font-display font-black text-2xl sm:text-3xl text-white uppercase leading-tight">
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase leading-tight">
               {language === 'fr' ? 'Palais des Sports de Yaoundé' : 'Yaoundé Sports Palace'} <br /> {language === 'fr' ? '29 Novembre 2025' : 'November 29, 2025'}
             </h2>
             <div className="space-y-3 text-xs sm:text-sm text-slate-300">
@@ -182,7 +182,7 @@ export default function Palmares() {
               <span className="text-[10px] font-mono text-feca-red uppercase tracking-wider font-extrabold font-bold">
                 {language === 'fr' ? 'PODIUM SÉNÉGAL 2025' : 'SENEGAL PODIUM 2025'}
               </span>
-              <h4 className="font-display font-extrabold text-sm text-white">
+              <h4 className="font-display font-extrabold text-sm text-slate-100">
                 {language === 'fr' ? "Championnat d'Afrique de Savate" : "Savate African Championship"}
               </h4>
               <div className="bg-slate-950/60 p-3.5 rounded-xl border border-slate-800 font-sans text-xs space-y-1.5 mt-2">
@@ -211,7 +211,7 @@ export default function Palmares() {
               <span className="text-[10px] font-mono text-feca-gold uppercase tracking-wider font-bold">
                 {language === 'fr' ? 'LE CAIRE ÉGYPTE 2024' : 'CAIRO EGYPT 2024'}
               </span>
-              <h4 className="font-display font-extrabold text-sm text-white">
+              <h4 className="font-display font-extrabold text-sm text-slate-100">
                 {language === 'fr' ? "Sacre de l'Afrique du Nord et Centrale" : "North & Central Africa Coronation"}
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed font-sans">
@@ -231,7 +231,7 @@ export default function Palmares() {
               <span className="text-[10px] font-mono text-feca-red uppercase tracking-wider font-bold">
                 {language === 'fr' ? 'YAOUNDÉ JUILLET 2024' : 'YAOUNDE JULY 2024'}
               </span>
-              <h4 className="font-display font-extrabold text-sm text-white">
+              <h4 className="font-display font-extrabold text-sm text-slate-100">
                 {language === 'fr' ? "Finale Retour Nationale de Savate" : "National Return Savate Finals"}
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed font-sans">
@@ -254,7 +254,7 @@ export default function Palmares() {
             <span className="text-xs uppercase tracking-widest text-feca-red font-mono font-bold">
               {language === 'fr' ? 'Base de Données des Podiums' : 'Podiums Database Registry'}
             </span>
-            <h3 className="font-display font-black text-xl text-white uppercase mt-0.5">
+            <h3 className="font-display font-black text-xl text-slate-100 uppercase mt-0.5">
               {language === 'fr' ? 'Tableau Interactif du Palmarès Mondial' : 'Interactive World Awards Table'}
             </h3>
           </div>

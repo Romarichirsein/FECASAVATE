@@ -181,7 +181,7 @@ export default function VideoLightbox({ isOpen, onClose, initialVideoId }: Video
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-sm sm:text-base font-display font-extrabold text-white leading-snug">
+                  <h3 className="text-sm sm:text-base font-display font-extrabold text-slate-100 leading-snug">
                     {currentVideo.title}
                   </h3>
                   <p className="text-[11px] sm:text-xs text-slate-400 font-sans leading-relaxed select-text">

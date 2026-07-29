@@ -24,6 +24,21 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('accueil');
   const [unreadCount, setUnreadCount] = useState<number>(2);
   const [session, setSession] = useState<UserSession>({ isLoggedIn: false });
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    const saved = localStorage.getItem('fec_dark');
+    return saved === 'true'; // Defaults to false (Light Mode) if not set
+  });
+
+  // Synchronize HTML element classes with dark mode state
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('fec_dark', 'true');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('fec_dark', 'false');
+    }
+  }, [isDark]);
 
   // Handle Hash Routing listener to support "chaque lien s'ouvre sur sa page" & "défilement fluide"
   useEffect(() => {
@@ -113,6 +128,8 @@ export default function App() {
         onUnreadCountChange={setUnreadCount}
         isLoggedIn={session.isLoggedIn}
         onLogout={handleLogout}
+        isDark={isDark}
+        onToggleDark={() => setIsDark(!isDark)}
       />
 
       {/* Main Dynamic Viewport with staggered micro-transitions */}

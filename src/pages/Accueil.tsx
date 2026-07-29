@@ -82,7 +82,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
               </span>
             </div>
 
-            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight uppercase text-white">
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight uppercase text-slate-100">
               {language === 'fr' ? (
                 <>
                   S'entraîner avec Ferveur <br />
@@ -212,7 +212,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
           <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
             {language === 'fr' ? 'Catalogue de Combat & de Forme' : 'Combat & Fitness Catalog'}
           </span>
-          <h2 className="font-display font-black text-3xl text-white uppercase mt-1 leading-tight">
+          <h2 className="font-display font-black text-3xl text-slate-100 uppercase mt-1 leading-tight">
             {language === 'fr' ? 'Les 6 Grandes Disciplines Pratiquées' : 'The 6 Core Practiced Disciplines'}
           </h2>
           <p className="text-slate-400 text-sm mt-3">
@@ -267,7 +267,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
             <div className="md:col-span-8 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
                 <div>
-                  <h3 className="text-2xl font-display font-extrabold text-white">
+                  <h3 className="text-2xl font-display font-extrabold text-slate-100">
                     {translateItem(selectedDiscipline, 'name')}
                   </h3>
                   <span className="text-xs text-feca-gold block mt-0.5">
@@ -321,7 +321,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                 👑 {language === 'fr' ? 'SOUS LE HAUT PARRAINAGE DE LA PREMIÈRE DAME' : 'UNDER THE HIGH PATRONAGE OF THE FIRST LADY'}
               </span>
               
-              <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase leading-tight pt-2">
+              <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase leading-tight pt-2">
                 {language === 'fr' ? (
                   <>GRAND ÉVÉNEMENT <br />DE SAVATE AU CAMEROUN</>
                 ) : (
@@ -447,7 +447,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
             <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
               {language === 'fr' ? 'Un Bilan de Sacre' : 'A Record of Glory'}
             </span>
-            <h2 className="font-display font-black text-3xl text-white uppercase mt-1 leading-tight">
+            <h2 className="font-display font-black text-3xl text-slate-100 uppercase mt-1 leading-tight">
               {language === 'fr' ? 'Une Tradition de Médailles' : 'A Tradition of Medals'}
             </h2>
             <p className="text-slate-400 text-sm">
@@ -473,7 +473,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                 <Trophy size={16} />
               </div>
               <span className="text-[10px] font-mono text-feca-gold uppercase tracking-wider font-bold">Bulgarie 2023</span>
-              <h4 className="font-display font-bold text-base text-white mt-1.5">Akouan Pharelle</h4>
+              <h4 className="font-display font-bold text-base text-slate-100 mt-1.5">Akouan Pharelle</h4>
               <p className="text-xs text-slate-400 leading-relaxed mt-2 font-sans">
                 {language === 'fr' 
                   ? "Sacré champion du monde Savate Pro au cours d'un tournoi explosif, asseyant la domination de l’école technique du Cameroun."
@@ -486,7 +486,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                 <Trophy size={16} />
               </div>
               <span className="text-[10px] font-mono text-feca-gold uppercase tracking-wider font-bold">Le Caire 2024</span>
-              <h4 className="font-display font-bold text-base text-white mt-1.5">{language === 'fr' ? 'Équipe Nationale' : 'National Team'}</h4>
+              <h4 className="font-display font-bold text-base text-slate-100 mt-1.5">{language === 'fr' ? 'Équipe Nationale' : 'National Team'}</h4>
               <p className="text-xs text-slate-400 leading-relaxed mt-2 font-sans">
                 {language === 'fr' 
                   ? "Le Cameroun s'impose comme la 1ère nation subsaharienne de Savate Boxe Française lors des Championnats Continentaux."
@@ -505,7 +505,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
             <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
               {language === 'fr' ? 'La Voix des Gymnases' : 'Voices from the Gymnasiums'}
             </span>
-            <h3 className="font-display font-black text-2xl text-white uppercase mt-1">
+            <h3 className="font-display font-black text-2xl text-slate-100 uppercase mt-1">
               {language === 'fr' ? 'Témoignages de nos Membres' : 'Our Member Testimonials'}
             </h3>
           </div>
@@ -537,7 +537,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                     {item.name[0]}
                   </div>
                   <div>
-                    <h5 className="font-display font-bold text-xs text-white">
+                    <h5 className="font-display font-bold text-xs text-slate-100">
                       {item.name}
                     </h5>
                     <span className="text-[10px] text-slate-500 font-mono">

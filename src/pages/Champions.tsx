@@ -55,7 +55,7 @@ export default function Champions() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? "Annuaire des Licenciés d'Élite" : "Elite Licensees Directory"}
         </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-white leading-tight">
+        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
           {language === 'fr' ? 'Nos Membres & Champions' : 'Our Members & Champions'}
         </h1>
         <p className="text-slate-300 text-sm">

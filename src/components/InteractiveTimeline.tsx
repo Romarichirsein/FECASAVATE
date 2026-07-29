@@ -34,7 +34,7 @@ export default function InteractiveTimeline() {
         <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
           {language === 'fr' ? 'Rétrospective Historique Officielle' : 'Official Historical Retrospective'}
         </span>
-        <h3 className="font-display font-black text-2xl sm:text-3xl text-white mt-1.5">
+        <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-100 mt-1.5">
           {language === 'fr' ? 'La Ligne du Temps des Lions' : 'Fecasavate Lions Timeline'}
         </h3>
         <p className="text-slate-400 text-sm mt-3">
@@ -129,7 +129,7 @@ export default function InteractiveTimeline() {
 
             {/* Context paragraph */}
             <div className="md:col-span-9 flex flex-col justify-center">
-              <h4 className="font-display font-bold text-lg sm:text-xl text-white">
+              <h4 className="font-display font-bold text-lg sm:text-xl text-slate-100">
                 {translateItem(activeEvent, 'title')}
               </h4>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2.5 font-sans">

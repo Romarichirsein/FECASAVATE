@@ -125,7 +125,7 @@ export default function OtpModal({ isOpen, onClose, onVerifySuccess, phoneOrEmai
               )}
             </div>
             
-            <h3 className="font-display font-bold text-xl text-white">
+            <h3 className="font-display font-bold text-xl text-slate-100">
               Double Authentification (2FA)
             </h3>
             <p className="text-slate-400 text-xs mt-1 px-4">

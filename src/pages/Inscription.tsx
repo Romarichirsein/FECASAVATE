@@ -137,7 +137,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                 <span className="text-[10px] font-mono text-emerald-400 font-bold block bg-emerald-950/35 border border-emerald-500/30 px-2 py-0.5 rounded-md inline-block">
                   SÉCURISATION SATELLITE ACTIVE
                 </span>
-                <h2 className="font-display font-black text-white text-2xl uppercase tracking-tight mt-1">
+                <h2 className="font-display font-black text-slate-100 text-2xl uppercase tracking-tight mt-1">
                   Espace Privé de {session.firstName}
                 </h2>
                 <p className="text-slate-400 text-xs mt-0.5">
@@ -170,7 +170,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                   {session.firstName[0]}
                 </div>
                 <div>
-                  <h4 className="font-display font-extrabold text-base text-white">
+                  <h4 className="font-display font-extrabold text-base text-slate-100">
                     {session.lastName} {session.firstName}
                   </h4>
                   <span className="text-[10px] text-slate-500 font-mono block mt-0.5">
@@ -302,7 +302,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
           </div>
 
           <div className="text-center mb-6">
-            <h2 className="font-display font-black text-xl text-white uppercase tracking-tight">
+            <h2 className="font-display font-black text-xl text-slate-100 uppercase tracking-tight">
               {activeTab === 'connexion' ? 'Accéder au Portail' : 'Rejoindre Fecasavate'}
             </h2>
             <p className="text-slate-400 text-xs mt-1">

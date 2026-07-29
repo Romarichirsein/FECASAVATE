@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Swords, User, Layers, ShieldCheck, Globe } from 'lucide-react';
+import { Menu, X, Swords, User, Layers, ShieldCheck, Globe, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import NotificationCenter from './NotificationCenter';
 import { useLanguage } from './LanguageContext';
@@ -16,6 +16,8 @@ interface NavbarProps {
   onUnreadCountChange: (count: number) => void;
   isLoggedIn: boolean;
   onLogout: () => void;
+  isDark: boolean;
+  onToggleDark: () => void;
 }
 
 export default function Navbar({ 
@@ -24,7 +26,9 @@ export default function Navbar({
   unreadCount, 
   onUnreadCountChange, 
   isLoggedIn,
-  onLogout
+  onLogout,
+  isDark,
+  onToggleDark
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -147,6 +151,16 @@ export default function Navbar({
             {/* Utilities / Notification Bell + Login CTA */}
             <div className="hidden sm:flex items-center gap-3">
               
+              {/* Premium Theme Switcher */}
+              <button
+                type="button"
+                onClick={onToggleDark}
+                className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white cursor-pointer hover:border-slate-700 transition-all shadow-inner flex items-center justify-center w-8 h-8"
+                title={isDark ? 'Activer le mode clair' : 'Activer le mode sombre'}
+              >
+                {isDark ? <Sun className="w-4 h-4 text-feca-gold animate-float" /> : <Moon className="w-4 h-4 text-slate-400" />}
+              </button>
+
               {/* Premium Dual Language Switcher Segment */}
               <div className="flex bg-slate-900 border border-slate-800 p-0.5 rounded-xl text-[9px] font-mono leading-none mr-1 shadow-inner select-none transition-all hover:border-slate-700">
                 <button
@@ -230,6 +244,39 @@ export default function Navbar({
             >
               <div className="flex flex-col gap-1.5">
                 
+                {/* Mobile Dark/Light Toggle row */}
+                <div className="flex items-center justify-between px-4 py-2 mb-1.5 bg-slate-900 rounded-xl border border-slate-850">
+                  <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+                    {isDark ? <Sun size={11} className="text-feca-gold" /> : <Moon size={11} className="text-feca-gold" />}
+                    <span>{language === 'fr' ? 'Mode Visuel :' : 'Visual Mode :'}</span>
+                  </span>
+                  
+                  <div className="flex bg-slate-950 border border-slate-800 p-0.5 rounded-lg text-[9px] font-mono leading-none">
+                    <button
+                      type="button"
+                      onClick={onToggleDark}
+                      className={`px-3 py-1.5 rounded-md font-bold uppercase transition-all cursor-pointer ${
+                        !isDark 
+                          ? 'bg-feca-gold text-slate-950 font-black' 
+                          : 'text-slate-400'
+                      }`}
+                    >
+                      {language === 'fr' ? 'Clair' : 'Light'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={onToggleDark}
+                      className={`px-3 py-1.5 rounded-md font-bold uppercase transition-all cursor-pointer ${
+                        isDark 
+                          ? 'bg-feca-gold text-slate-950 font-black' 
+                          : 'text-slate-400'
+                      }`}
+                    >
+                      {language === 'fr' ? 'Sombre' : 'Dark'}
+                    </button>
+                  </div>
+                </div>
+
                 {/* Mobile Language Switcher row */}
                 <div className="flex items-center justify-between px-4 py-2 mb-2 bg-slate-900 rounded-xl border border-slate-850">
                   <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
