@@ -110,22 +110,48 @@ export default function Formation({ onPageChange }: FormationProps) {
   const activePartData = parts.find(p => p.num === activeVideoPart) || parts[0];
 
   return (
-    <div className="space-y-16 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
-      
-      {/* 1. HERO DESCRIPTION */}
-      <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">
-        <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
-          {language === 'fr' ? 'Académie Nationale de Formation' : 'National Referee Academy'}
-        </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
-          {language === 'fr' ? 'Devenir Arbitre de Savate' : 'Become a Savate Referee'}
-        </h1>
-        <p className="text-slate-300 text-sm">
-          {language === 'fr' 
-            ? '"Devenez l’élite des arbitres de Savate au Cameroun" • Rejoignez notre programme de certification professionnelle en 6 parties pour arbitrer les tournois de Boxe Française.'
-            : '"Join the elite team of Savate officials in Cameroon" • Complete our professional six-part certification program to officiate French Boxe combat meets.'}
-        </p>
+    <div className="space-y-16 pb-16 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <section className="relative w-full h-[55vh] min-h-[360px] overflow-hidden">
+        <img
+          src="/images/savate 6.png"
+          alt="Formation FECASAVATE"
+          className="w-full h-full object-cover object-center"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/savat2.jpg'; }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/40 to-feca-dark" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono mb-3"
+          >
+            {language === 'fr' ? 'Académie Nationale de Formation' : 'National Referee Academy'}
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl sm:text-6xl uppercase text-white leading-tight drop-shadow-lg"
+          >
+            {language === 'fr' ? 'Devenir Arbitre de Savate' : 'Become a Savate Referee'}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-200 text-sm mt-4 max-w-2xl"
+          >
+            {language === 'fr' 
+              ? '"Devenez l’élite des arbitres de Savate au Cameroun" • Programme de certification professionnelle en 6 parties.'
+              : '"Join the elite team of Savate officials in Cameroon" • Six-part professional certification program.'}
+          </motion.p>
+        </div>
       </section>
+
+      <div className="px-4 sm:px-8 max-w-[1700px] w-full mx-auto space-y-16">
 
       {/* 2. VALUE PROPOSITION BULLETS */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -498,6 +524,7 @@ export default function Formation({ onPageChange }: FormationProps) {
         initialVideoId={getModuleVideoId(activeVideoPart)} 
       />
 
+      </div>{/* /inner content wrapper */}
     </div>
   );
 }

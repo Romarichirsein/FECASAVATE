@@ -125,13 +125,11 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
               </button>
 
               <button
-                onClick={() => openVideoLightbox('gala-2025')}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-705 text-feca-gold hover:text-white font-display font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer group shadow-lg"
+                onClick={() => onPageChange('palmares')}
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-feca-gold text-feca-gold hover:text-white font-display font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer group shadow-lg"
               >
-                <div className="w-5 h-5 rounded-full bg-feca-gold/20 flex items-center justify-center group-hover:bg-feca-red/20 transition-colors">
-                  <Play size={10} className="fill-feca-gold group-hover:fill-white text-feca-gold group-hover:text-white" />
-                </div>
-                <span>{language === 'fr' ? 'Regarder Teaser 2025' : 'Watch 2025 Teaser'}</span>
+                <Trophy size={14} className="text-feca-gold" />
+                <span>{language === 'fr' ? 'Voir le Palmarès' : 'See our Honours'}</span>
               </button>
             </div>
 
@@ -165,51 +163,36 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
 
           </motion.div>
 
-          {/* Glowing Animated Virtual Ring Illustration / Interactive Panel */}
+          {/* Hero image — real savate action photo */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.75, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative"
           >
-            <div 
-              onClick={() => openVideoLightbox('gala-2025')}
-              className="relative mx-auto max-w-[340px] sm:max-w-[400px] aspect-square rounded-full border-2 border-dashed border-feca-red/40 flex items-center justify-center p-6 bg-slate-950/60 shadow-3xl cursor-pointer group active:scale-98 transition-transform"
-              title={language === 'fr' ? "Cliquer pour visionner le spot officiel en continu" : "Click to play the official promo video"}
-            >
-              
-              {/* Outer floating orbiting decorations */}
-              <div className="absolute top-2 left-6 p-2 rounded-xl bg-slate-900/95 border border-slate-800 text-xs flex items-center gap-1.5 animate-float shadow-lg group-hover:border-feca-gold transition-colors">
-                <Trophy size={14} className="text-feca-gold" />
-                <span className="font-mono text-[10px] text-white">Chaudron Yaoundé</span>
-              </div>
-
-              <div className="absolute bottom-6 right-2 p-2 rounded-xl bg-slate-900/95 border border-slate-800 text-xs flex items-center gap-1.5 animate-float shadow-lg group-hover:border-feca-red transition-colors" style={{ animationDelay: '2s' }}>
-                <Zap size={14} className="text-feca-red animate-pulse" />
-                <span className="font-mono text-[10px] text-white">{language === 'fr' ? 'Trailer Direct 🎥' : 'Live Trailer 🎥'}</span>
-              </div>
-
-              {/* Inner graphic representing a ring platform */}
-              <div className="w-11/12 h-11/12 rounded-full bg-gradient-to-tr from-slate-900 via-feca-night to-slate-950 border-4 border-slate-800 group-hover:border-feca-red/60 flex flex-col items-center justify-center relative overflow-hidden transition-colors duration-500">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
-                
-                {/* Simulated center circle ring */}
-                <div className="w-40 h-40 rounded-full border border-feca-red/30 flex items-center justify-center relative bg-slate-950/40 group-hover:scale-105 transition-transform duration-500">
-                  <div className="absolute inset-0 rounded-full bg-feca-red/5 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full animate-ping" />
-                  
-                  {/* Glowing center Play button overlay */}
-                  <div className="w-16 h-16 rounded-full bg-feca-red group-hover:bg-feca-gold/90 text-white group-hover:text-slate-950 flex items-center justify-center shadow-lg transition-colors duration-300">
-                    <Play size={20} className="ml-1 fill-current text-white group-hover:text-slate-950" />
-                  </div>
-                  
-                  <div className="absolute inset-0 rounded-full border-4 border-slate-950" />
-                </div>
-
-                <div className="absolute bottom-6 text-center bg-slate-950 border border-slate-850 px-3 py-1.5 rounded-xl group-hover:border-feca-gold transition-colors">
-                  <span className="block text-[8px] tracking-wider text-slate-500 font-mono">{language === 'fr' ? 'ARÈNE DU DIRECT CLIQUEZ' : 'CLICK FOR LIVE ARENA'}</span>
-                  <span className="block text-xs font-bold text-feca-gold font-display">{language === 'fr' ? 'Lancer le Teaser 2025' : 'Launch 2025 Teaser'}</span>
+            <div className="relative mx-auto max-w-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-slate-950/60 border border-slate-800">
+              {/* Glow border accent */}
+              <div className="absolute inset-0 rounded-3xl ring-2 ring-feca-gold/20 z-10 pointer-events-none" />
+              <img
+                src="/images/savat2.jpg"
+                alt="Savate FECASAVATE – combattants en action"
+                className="w-full h-[420px] object-cover object-center"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/images/savate 6.png';
+                }}
+              />
+              {/* Overlay badge */}
+              <div className="absolute bottom-4 left-4 bg-slate-950/85 backdrop-blur-sm border border-feca-gold/30 rounded-xl px-4 py-2.5 flex items-center gap-2 z-20">
+                <Trophy size={16} className="text-feca-gold" />
+                <div>
+                  <span className="block text-[9px] font-mono text-slate-400 uppercase tracking-widest">{language === 'fr' ? 'Championnat National' : 'National Championship'}</span>
+                  <span className="block text-xs font-display font-bold text-white">FECASAVATE 🇨🇲</span>
                 </div>
               </div>
+            </div>
+            {/* Floating stat chips */}
+            <div className="absolute -top-4 -right-4 bg-feca-red text-white text-[10px] font-mono font-bold px-3 py-1.5 rounded-full shadow-lg shadow-red-950/40 animate-float">
+              🥇 Champions du Monde
             </div>
           </motion.div>
         </div>

@@ -62,22 +62,50 @@ export default function Palmares() {
   };
 
   return (
-    <div className="space-y-16 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
-      
-      {/* 1. HERO HEAD */}
-      <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">
-        <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
-          {language === 'fr' ? "Les Victoires de l'Histoire" : "History's Mighty Victories"}
-        </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
-          {language === 'fr' ? 'Palmarès de la Savate' : 'Savate Award History'}
-        </h1>
-        <p className="text-slate-300 text-sm">
-          {language === 'fr' 
-            ? "Découvrez le tableau officiel d'honneurs des athlètes camerounais de 2010 à 2025, de l'Or de Bulgarie aux Coupes et championnats nationaux de Yaoundé."
-            : "Discover the official honor board of Cameroonian athletes from 2010 to 2025, from Gold in Bulgaria to the national cups and championships of Yaoundé."}
-        </p>
+    <div className="space-y-16 pb-16 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <section className="relative w-full h-[55vh] min-h-[380px] overflow-hidden">
+        <img
+          src="/images/savate 7.png"
+          alt="Palmarès FECASAVATE"
+          className="w-full h-full object-cover object-center"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/savat3.jpg'; }}
+        />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-feca-dark" />
+        {/* Hero text */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono mb-3"
+          >
+            {language === 'fr' ? "Les Victoires de l'Histoire" : "History's Mighty Victories"}
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl sm:text-6xl uppercase text-white leading-tight drop-shadow-lg"
+          >
+            {language === 'fr' ? 'Palmarès de la Savate' : 'Savate Award History'}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-200 text-sm mt-4 max-w-2xl"
+          >
+            {language === 'fr' 
+              ? "Découvrez le tableau officiel d'honneurs des athlètes camerounais de 2010 à 2025."
+              : "Discover the official honor board of Cameroonian athletes from 2010 to 2025."}
+          </motion.p>
+        </div>
       </section>
+
+      <div className="px-4 sm:px-8 max-w-[1700px] w-full mx-auto space-y-16">
 
       {/* 2. CHANTAL BIYA WORLD FIGHT GRAND EVENT VIP CARD (NOV 29, 2025) */}
       <section className="bg-slate-900 border-2 border-feca-gold p-6 sm:p-10 rounded-3xl relative overflow-hidden shadow-2xl">
@@ -387,6 +415,7 @@ export default function Palmares() {
         </div>
       </section>
 
+      </div>{/* /inner content wrapper */}
     </div>
   );
 }

@@ -87,16 +87,51 @@ export default function About() {
   const selectedValue = valuesLayouts[activeValueTab];
 
   return (
-    <div className="space-y-16 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
-      
-      {/* 1. BRAND STORY HEADER */}
-      <section className="text-center max-w-3xl mx-auto space-y-4 pt-10">
-        <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
-          {language === 'fr' ? "La Vocation d'une Naissance" : "The Vocation of a Birth"}
-        </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
-          {language === 'fr' ? 'À Propos de la Fecasavate' : 'About Fecasavate'}
-        </h1>
+    <div className="space-y-16 pb-16 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <section className="relative w-full h-[55vh] min-h-[360px] overflow-hidden">
+        <img
+          src="/images/savat2.jpg"
+          alt="À propos FECASAVATE"
+          className="w-full h-full object-cover object-center"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/savate 6.png'; }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-feca-dark" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono mb-3"
+          >
+            {language === 'fr' ? "La Vocation d'une Naissance" : "The Vocation of a Birth"}
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl sm:text-6xl uppercase text-white leading-tight drop-shadow-lg"
+          >
+            {language === 'fr' ? 'À Propos de la Fecasavate' : 'About Fecasavate'}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-200 text-sm mt-4 max-w-2xl"
+          >
+            {language === 'fr' 
+              ? "La Fédération Camerounaise de Savate Boxe Française — gardienne de la Boxe Française au Cameroun depuis 1990."
+              : "The Cameroonian Federation of Savate French Boxing — guardian of French Boxing in Cameroon since 1990."}
+          </motion.p>
+        </div>
+      </section>
+
+      <div className="px-4 sm:px-8 max-w-[1700px] w-full mx-auto space-y-16">
+
+      {/* 1. BRAND STORY */}
+      <section className="text-center max-w-3xl mx-auto space-y-4 pt-4">
         <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
           {language === 'fr' ? (
             <>Fondée pour structurer, promouvoir et réglementer la Boxe Française au Cameroun, la <strong>FECASAVATE</strong> a su hisser l’Afrique Centrale au firmament des rings internationaux. Découvrez notre patrimoine, nos valeurs d’intégrité, et les ligues d’excellence qui nous animent.</>
@@ -297,6 +332,7 @@ export default function About() {
         </div>
       </section>
 
+      </div>{/* /inner content wrapper */}
     </div>
   );
 }

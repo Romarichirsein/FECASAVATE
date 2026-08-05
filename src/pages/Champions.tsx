@@ -48,22 +48,55 @@ export default function Champions() {
   });
 
   return (
-    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
-      
-      {/* 1. HERO DESCRIPTION */}
-      <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">
-        <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
-          {language === 'fr' ? "Annuaire des Licenciés d'Élite" : "Elite Licensees Directory"}
-        </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
-          {language === 'fr' ? 'Nos Membres & Champions' : 'Our Members & Champions'}
-        </h1>
-        <p className="text-slate-300 text-sm">
-          {language === 'fr' 
-            ? "Découvrez la team technique nationale répertoriée. Filtrez les combattants par catégorie, genre, ou rôles d’encadrement."
-            : "Discover our listed national technical team. Filter fighters by weight category, gender, or administrative functions."}
-        </p>
+    <div className="space-y-12 pb-16 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <section className="relative w-full h-[50vh] min-h-[320px] overflow-hidden">
+        <img
+          src="/images/savat3.jpg"
+          alt="Champions FECASAVATE"
+          className="w-full h-full object-cover object-top"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/savate 7.png'; }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/35 to-feca-dark" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono mb-3"
+          >
+            {language === 'fr' ? "Annuaire des Licenciés d'Élite" : "Elite Licensees Directory"}
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl sm:text-6xl uppercase text-white leading-tight drop-shadow-lg"
+          >
+            {language === 'fr' ? 'Nos Membres & Champions' : 'Our Members & Champions'}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-200 text-sm mt-4 max-w-2xl"
+          >
+            {language === 'fr'
+              ? "Les athlètes, entraîneurs et officiels qui font la grandeur de la FECASAVATE."
+              : "The athletes, coaches and officials who make FECASAVATE great."}
+          </motion.p>
+        </div>
       </section>
+
+      <div className="px-4 sm:px-8 max-w-[1700px] w-full mx-auto space-y-12">
+
+      {/* Intro sub-text */}
+      <p className="text-slate-300 text-sm text-center max-w-2xl mx-auto">
+        {language === 'fr' 
+          ? "Découvrez la team technique nationale répertoriée. Filtrez les combattants par catégorie, genre, ou rôles d'encadrement."
+          : "Discover our listed national technical team. Filter fighters by weight category, gender, or administrative functions."}
+      </p>
 
       {/* 2. SECURITY PRIVACY ADVISORY BADGE */}
       <section className="max-w-4xl mx-auto bg-blue-950/20 border border-blue-500/30 p-4 rounded-2xl flex items-start gap-3.5 shadow-md">
@@ -254,6 +287,7 @@ export default function Champions() {
         )}
       </section>
 
+      </div>{/* /inner content wrapper */}
     </div>
   );
 }

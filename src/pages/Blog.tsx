@@ -72,22 +72,48 @@ export default function Blog() {
   });
 
   return (
-    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
-      
-      {/* 1. HERO HEADLINES */}
-      <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">
-        <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
-          {language === 'fr' ? 'Chroniques de la Fédération' : 'Federation Chronologies'}
-        </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
-          {language === 'fr' ? 'L’Écho de l’Arène' : 'Echoes of the Ring'}
-        </h1>
-        <p className="text-slate-300 text-sm">
-          {language === 'fr' 
-            ? "Retrouvez les comptes-rendus des finales de Yaoundé 5, les séances populaires de Savate Forme et les grands jalons de la sélection au Caire."
-            : "Consult the reviews of the Yaoundé 5 finals, the public Savate Forme drills, and the historical steps toward Cairo selections."}
-        </p>
+    <div className="space-y-12 pb-16 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <section className="relative w-full h-[50vh] min-h-[320px] overflow-hidden">
+        <img
+          src="/images/savat3.jpg"
+          alt="Blog FECASAVATE"
+          className="w-full h-full object-cover object-center"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/savate 6.png'; }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/35 to-feca-dark" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono mb-3"
+          >
+            {language === 'fr' ? 'Chroniques de la Fédération' : 'Federation Chronologies'}
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl sm:text-6xl uppercase text-white leading-tight drop-shadow-lg"
+          >
+            {language === 'fr' ? 'L’Écho de l’Arène' : 'Echoes of the Ring'}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-200 text-sm mt-4 max-w-2xl"
+          >
+            {language === 'fr' 
+              ? "Retrouvez les comptes-rendus des finales de Yaoundé 5, les grandes actualités fédérales et les jalons de la sélection internationale."
+              : "Consult the reviews of the Yaoundé 5 finals, federal news, and the steps toward international selections."}
+          </motion.p>
+        </div>
       </section>
+
+      <div className="px-4 sm:px-8 max-w-[1700px] w-full mx-auto space-y-12">
 
       {/* 2. FILTERS AND SEARCH COMPASS */}
       <section className="bg-slate-900/60 border border-slate-800 p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
@@ -306,6 +332,7 @@ export default function Blog() {
         )}
       </AnimatePresence>
 
+      </div>{/* /inner content wrapper */}
     </div>
   );
 }

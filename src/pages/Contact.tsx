@@ -35,20 +35,46 @@ export default function Contact() {
   };
 
   return (
-    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
-      
-      {/* 1. HERO DESCRIPTION */}
-      <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">
-        <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
-          Centre de Communication Fédéral
-        </span>
-        <h1 className="font-display font-black text-3xl sm:text-5xl uppercase text-slate-100 leading-tight">
-          Contacter la Fecasavate
-        </h1>
-        <p className="text-slate-300 text-sm">
-          Pour toute demande d’affiliation de club, de sponsoring d’athlète, ou de renseignement sur nos formations, écrivez-nous ou localisez nos bureaux à Yaoundé.
-        </p>
+    <div className="space-y-12 pb-16 font-sans">
+
+      {/* ── HERO BANNER ── */}
+      <section className="relative w-full h-[45vh] min-h-[300px] overflow-hidden">
+        <img
+          src="/images/savate 6.png"
+          alt="Contact FECASAVATE"
+          className="w-full h-full object-cover object-center"
+          onError={(e) => { (e.target as HTMLImageElement).src = '/images/savat3.jpg'; }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/40 to-feca-dark" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <motion.span
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono mb-3"
+          >
+            Centre de Communication Fédéral
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display font-black text-4xl sm:text-6xl uppercase text-white leading-tight drop-shadow-lg"
+          >
+            Contacter la Fecasavate
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-200 text-sm mt-4 max-w-xl"
+          >
+            Pour toute demande d’affiliation, sponsoring ou renseignement, nos bureaux sont à Yaoundé.
+          </motion.p>
+        </div>
       </section>
+
+      <div className="px-4 sm:px-8 max-w-[1700px] w-full mx-auto space-y-12">
 
       {/* 2. THREE CORE SECTIONS GRID */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -262,6 +288,7 @@ export default function Contact() {
         </div>
       </section>
 
+      </div>{/* /inner content wrapper */}
     </div>
   );
 }
