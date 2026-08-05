@@ -96,7 +96,7 @@ export default function Licences() {
   };
 
   return (
-    <div className="space-y-12 pb-16 px-4 max-w-7xl mx-auto font-sans relative">
+    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans relative">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-feca-red/5 rounded-full blur-3xl pointer-events-none" />
@@ -118,7 +118,7 @@ export default function Licences() {
       </section>
 
       {/* 2. MAIN CONTAINER */}
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-6xl mx-auto space-y-8">
         
         {/* TABS SELECTOR */}
         <div className="grid grid-cols-2 bg-slate-950 p-1.5 border border-slate-800 rounded-2xl shadow-xl">

@@ -118,7 +118,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
   };
 
   return (
-    <div className="space-y-12 pb-16 px-4 max-w-7xl mx-auto font-sans relative">
+    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans relative">
       
       {/* Absolute Ambient Glow lights */}
       <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-feca-red/5 rounded-full blur-3xl pointer-events-none" />

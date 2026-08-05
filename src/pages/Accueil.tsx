@@ -8,6 +8,7 @@ import {
   Swords, ShieldAlert, Shield, Crown, Music, Zap, 
   MapPin, Calendar, Users, Trophy, ChevronRight, Star, Quote, ArrowRight, BellRing, Play
 } from 'lucide-react';
+import { motion } from 'motion/react';
 import { disciplines, upcomingFights } from '../data/sportData';
 import VideoLightbox, { FECASAVATE_VIDEOS } from '../components/VideoLightbox';
 import EventCountdown from '../components/EventCountdown';
@@ -63,18 +64,23 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
   ];
 
   return (
-    <div className="space-y-20 pb-16 font-sans">
+    <div className="space-y-24 pb-20 font-sans overflow-x-hidden">
       
       {/* 1. HERO SECTION ("UFC / ONE CHAMPIONSHIP" GRADE ATHLETIC IMPRESSION) */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-12 px-4">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 px-4 sm:px-8">
         {/* Extreme glowing overlays */}
         <div className="absolute inset-0 bg-radial-gradient from-feca-red/10 via-transparent to-transparent opacity-80 z-0 pointer-events-none" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-feca-gold/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-feca-gold/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+        <div className="max-w-[1700px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Slogans and CTA info */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6 text-center lg:text-left"
+          >
             <div className="inline-flex items-center gap-2 bg-slate-900/90 border border-slate-800 rounded-full px-4 py-1.5 select-none">
               <span className="flex h-2 w-2 rounded-full bg-feca-red animate-pulse" />
               <span className="text-[10px] uppercase font-mono tracking-widest text-slate-300 font-extrabold flex items-center gap-1">
@@ -157,10 +163,15 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Glowing Animated Virtual Ring Illustration / Interactive Panel */}
-          <div className="lg:col-span-5 relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative"
+          >
             <div 
               onClick={() => openVideoLightbox('gala-2025')}
               className="relative mx-auto max-w-[340px] sm:max-w-[400px] aspect-square rounded-full border-2 border-dashed border-feca-red/40 flex items-center justify-center p-6 bg-slate-950/60 shadow-3xl cursor-pointer group active:scale-98 transition-transform"
@@ -199,15 +210,13 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                   <span className="block text-xs font-bold text-feca-gold font-display">{language === 'fr' ? 'Lancer le Teaser 2025' : 'Launch 2025 Teaser'}</span>
                 </div>
               </div>
-
             </div>
-          </div>
-
+          </motion.div>
         </div>
       </section>
 
       {/* 2. THE 6 DISCIPINES BENTO SELECTOR */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
         <div className="text-center max-w-xl mx-auto">
           <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
             {language === 'fr' ? 'Catalogue de Combat & de Forme' : 'Combat & Fitness Catalog'}
@@ -305,7 +314,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
       </section>
 
       {/* 3. MAJOR FIGHT-CARD PROMOTION (THE MAIN EVENT NOV 29, 2025) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
         
         {/* Banner callout */}
         <div className="bg-gradient-to-r from-red-950/50 via-rose-950/30 to-slate-900/60 border-2 border-feca-red rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
@@ -440,7 +449,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
       </section>
 
       {/* 4. PALMARÈS SUMMARY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-4 space-y-4">
@@ -500,7 +509,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
 
       {/* 5. GUEST TESTIMONIALS */}
       <section className="bg-slate-900/40 border-y border-slate-800/80 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-10">
           <div className="text-center max-w-xl mx-auto">
             <span className="text-xs uppercase tracking-widest text-feca-red font-semibold font-mono">
               {language === 'fr' ? 'La Voix des Gymnases' : 'Voices from the Gymnasiums'}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -48,8 +48,8 @@
 }
 
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-display: 'Poppins', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Premium Sports Theme Color Config bound to CSS variables */
@@ -75,7 +75,7 @@
 body {
   background-color: var(--feca-dark);
   color: var(--slate-100);
-  font-family: var(--font-sans);
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--slate-800) var(--feca-dark);

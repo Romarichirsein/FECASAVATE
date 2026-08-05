@@ -35,7 +35,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="space-y-12 pb-16 px-4 max-w-7xl mx-auto font-sans">
+    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans">
       
       {/* 1. HERO DESCRIPTION */}
       <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">

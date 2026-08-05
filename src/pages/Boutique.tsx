@@ -69,7 +69,7 @@ export default function Boutique() {
   };
 
   return (
-    <div className="space-y-12 pb-16 px-4 max-w-7xl mx-auto font-sans relative">
+    <div className="space-y-12 pb-16 px-4 sm:px-8 max-w-[1700px] w-full mx-auto font-sans relative">
       
       {/* 1. HERO HEAD */}
       <section className="text-center max-w-2xl mx-auto space-y-4 pt-10">

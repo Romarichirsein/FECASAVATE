@@ -31,7 +31,7 @@ export default function Footer({ onPageChange }: FooterProps) {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-feca-red/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-0 left-0 w-80 h-80 bg-feca-gold/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
         {/* PARTNERS LOGO SCROLLER OR GRID HEADER */}
         <div className="border-b border-slate-800/80 pb-12 mb-12">
