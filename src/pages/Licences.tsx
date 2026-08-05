@@ -64,13 +64,9 @@ export default function Licences() {
     }
 
     setError(null);
-    setSubmitting(true);
-
-    setTimeout(() => {
-      setSubmitting(false);
-      const refNumber = `LIC-2026-${Math.floor(100000 + Math.random() * 900000)}`;
-      setSubmittedSuccess(refNumber);
-    }, 1200);
+    setSubmitting(false);
+    const refNumber = `LIC-2026-${Math.floor(100000 + Math.random() * 900000)}`;
+    setSubmittedSuccess(refNumber);
   };
 
   const handleAffiliationSubmit = (e: React.FormEvent) => {
@@ -81,13 +77,9 @@ export default function Licences() {
     }
 
     setError(null);
-    setSubmitting(true);
-
-    setTimeout(() => {
-      setSubmitting(false);
-      const refNumber = `AFF-CLUB-${Math.floor(100000 + Math.random() * 900000)}`;
-      setSubmittedSuccess(refNumber);
-    }, 1200);
+    setSubmitting(false);
+    const refNumber = `AFF-CLUB-${Math.floor(100000 + Math.random() * 900000)}`;
+    setSubmittedSuccess(refNumber);
   };
 
   const resetForm = () => {

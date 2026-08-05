@@ -16,26 +16,14 @@ export default function Blog() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [readingArticle, setReadingArticle] = useState<BlogArticle | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const categories = language === 'fr' 
     ? ['all', 'Compétition Nationale', 'Initiation Grand Public', 'International', 'Vie Fédérale', 'Annonce']
     : ['all', 'National Competition', 'Public Initiation', 'International', 'Federal Life', 'Announcement'];
 
-  // Simulate loading articles dynamically when changing categories or on mount
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 550);
-    return () => clearTimeout(timer);
-  }, [selectedCategory]);
-
   const handleManualRefresh = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 700);
+    setIsLoading(false);
   };
 
   const filteredArticles = blogArticles.filter(art => {

@@ -71,24 +71,19 @@ export default function OtpModal({ isOpen, onClose, onVerifySuccess, phoneOrEmai
 
     if (entered === correctCode) {
       setSuccess(true);
-      setTimeout(() => {
-        onVerifySuccess();
-        onClose();
-        // Reset state
-        setCode(['', '', '', '', '', '']);
-        setSuccess(false);
-      }, 1500);
+      onVerifySuccess();
+      onClose();
+      setCode(['', '', '', '', '', '']);
+      setSuccess(false);
     } else {
-      setError('Code OTP incorrect ou expiré. Indice pour le test : 237486');
+      setError('Code OTP incorrect ou expiré.');
     }
   };
 
   const handleResend = () => {
-    setIsResending(true);
-    setTimeout(() => {
-      setIsResending(false);
-      setTimer(59);
-      setError(null);
+    setIsResending(false);
+    setTimer(59);
+    setError(null);
       // Simulative toast-like sound
       try {
         const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
@@ -97,10 +92,9 @@ export default function OtpModal({ isOpen, onClose, onVerifySuccess, phoneOrEmai
         oscillator.frequency.setValueAtTime(660, audioCtx.currentTime); 
         gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
         oscillator.connect(gainNode);
-        gainNode.connect(audioCtx.color || audioCtx.destination);
+        gainNode.connect(audioCtx.destination);
         oscillator.start(); oscillator.stop(audioCtx.currentTime + 0.15);
       } catch (e) {}
-    }, 1000);
   };
 
   return (

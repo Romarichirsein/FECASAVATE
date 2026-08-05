@@ -17,22 +17,10 @@ export default function Champions() {
   const [selectedGender, setSelectedGender] = useState<string>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedRole, setSelectedRole] = useState<string>('all');
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  // Trigger brief shimmer state on page transition or filter alterations
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 600);
-    return () => clearTimeout(timer);
-  }, [selectedGender, selectedCategory, selectedRole]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleManualRefresh = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 800);
+    setIsLoading(false);
   };
 
   const filteredMembers = championsList.filter(m => {

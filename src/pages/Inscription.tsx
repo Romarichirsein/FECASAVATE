@@ -75,28 +75,21 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
       return;
     }
 
-    setLoading(true);
-
-    // Simulate cryptographic processing delay
-    setTimeout(() => {
-      setLoading(false);
-      
-      if (formData.use2FA) {
-        // Trigger double-authentication checkmodal
-        setIsOtpOpen(true);
-      } else {
-        // Bypass 2FA direct login
-        onLoginSuccess({
-          isLoggedIn: true,
-          username: formData.username,
-          firstName: formData.firstName || 'Tireur',
-          lastName: formData.lastName || 'Anonyme',
-          role: 'Athlète Licencié',
-          whatsapp: formData.whatsapp || '+237 699 886 386',
-          is2Fastated: false
-        });
-      }
-    }, 1000);
+    setLoading(false);
+    
+    if (formData.use2FA) {
+      setIsOtpOpen(true);
+    } else {
+      onLoginSuccess({
+        isLoggedIn: true,
+        username: formData.username,
+        firstName: formData.firstName || 'Tireur',
+        lastName: formData.lastName || 'Anonyme',
+        role: 'Athlète Licencié',
+        whatsapp: formData.whatsapp || '+237 699 886 386',
+        is2Fastated: false
+      });
+    }
   };
 
   const handle2FAVerifySuccess = () => {

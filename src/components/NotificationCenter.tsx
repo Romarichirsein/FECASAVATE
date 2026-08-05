@@ -168,34 +168,6 @@ export default function NotificationCenter({ onNotificationCountChange }: Notifi
     }
   };
 
-  // Allow manual alert dispatch in the UI for visitor testing of real-time engine
-  const dispatchMockAlert = () => {
-    if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
-      // Send a request to the WebSocket server to broadcast a new mock alert to EVERYONE connected!
-      socketRef.current.send(JSON.stringify({ type: 'TRIGGER_MOCK_BROADCAST' }));
-    } else {
-      // Local fallback if disconnected
-      const manualNotifs = [
-        { title: '🥊 Nouvelle Fight-Card parrainée', content: 'S.E. Chantal BIYA assistera en direct au combat d’Akouan Pharelle au Palais des Sports de Yaoundé.', category: 'event' as const },
-        { title: '🔒 Alerte Sécurité IP', content: 'Une tentative de connexion sécurisée bloquée depuis Douala par l’antivirus de la fédération 2FA.', category: 'alert' as const },
-        { title: '🎓 Place Libre arbitrage', content: 'Il reste 3 places subventionnées pour la session de formation d’arbitre national Savate Combat.', category: 'formation' as const }
-      ];
-      const randomIndex = Math.floor(Math.random() * manualNotifs.length);
-      const selected = manualNotifs[randomIndex];
-      
-      const notif: AppNotification = {
-        id: `man-${Date.now()}`,
-        title: selected.title,
-        content: selected.content,
-        timestamp: 'À l’instant',
-        category: selected.category,
-        isRead: false
-      };
-
-      triggerToast(notif);
-    }
-  };
-
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
   return (
@@ -258,7 +230,7 @@ export default function NotificationCenter({ onNotificationCountChange }: Notifi
                   </div>
                 </div>
 
-                {/* Sound Controls and Test Trigger */}
+                {/* Sound Controls */}
                 <div className="px-4 py-2 bg-slate-900/40 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400">
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input 
@@ -267,14 +239,9 @@ export default function NotificationCenter({ onNotificationCountChange }: Notifi
                       onChange={(e) => setSoundEnabled(e.target.checked)}
                       className="rounded border-slate-700 text-feca-red bg-feca-dark focus:ring-feca-red"
                     />
-                    Sons de combat ({soundEnabled ? 'Actifs' : 'Muet'})
+                    Sons de notification ({soundEnabled ? 'Actifs' : 'Muet'})
                   </label>
-                  <button 
-                    onClick={dispatchMockAlert}
-                    className="flex items-center gap-1 text-[10px] bg-red-950/40 border border-feca-red/40 hover:bg-feca-red/20 text-feca-red px-2 py-0.5 rounded cursor-pointer"
-                  >
-                    Simuler un Push 🥊
-                  </button>
+                  <span className="text-[10px] text-slate-500 font-mono">Alertes en direct</span>
                 </div>
 
                 {/* Notifications list */}

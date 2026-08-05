@@ -15,22 +15,10 @@ export default function Palmares() {
   const { language, translateItem } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMedal, setSelectedMedal] = useState<string>('all');
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  // Trigger brief shimmer state on medal choice change or initial load
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [selectedMedal]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleManualRefresh = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 750);
+    setIsLoading(false);
   };
 
   // Filter medals history list

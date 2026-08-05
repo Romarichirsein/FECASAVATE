@@ -14,24 +14,19 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(false);
+    setSubmitSuccess(true);
+    setFormData({ name: '', email: '', subject: '', message: '' });
 
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-
-      // Clean success notification toast triggers
-      try {
-        const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.frequency.setValueAtTime(783.99, audioCtx.currentTime); // G5
-        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-        osc.connect(gain); gain.connect(audioCtx.destination);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.15);
-      } catch(e){}
-    }, 1200);
+    try {
+      const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.frequency.setValueAtTime(783.99, audioCtx.currentTime); // G5
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.15);
+    } catch(e){}
   };
 
   return (

@@ -164,14 +164,6 @@ async function startServer() {
         const message = JSON.parse(data);
         if (message.type === 'PING') {
           ws.send(JSON.stringify({ type: 'PONG' }));
-        } else if (message.type === 'TRIGGER_MOCK_BROADCAST') {
-          // Trigger a random template broadcast
-          const randIdx = Math.floor(Math.random() * notificationTemplates.length);
-          const newNotif = generateNotification(notificationTemplates[randIdx]);
-          broadcastToAll({
-            type: 'NOTIFICATION_RECEIVED',
-            payload: newNotif
-          });
         }
       } catch (err) {
         // Silent recovery
@@ -180,7 +172,6 @@ async function startServer() {
 
     ws.on('close', () => {
       activeClients.delete(ws);
-      // console.log(`[WS] Client Disconnected. Total: ${activeClients.size}`);
       broadcastToAll({
         type: 'PRESENCE_SYNC',
         payload: { activeUsers: activeClients.size }
@@ -208,18 +199,6 @@ async function startServer() {
     });
   }
 
-  // 4. PERIODIC SIMULATION ENGINE (Push alert broadcast every 45s)
-  const periodicAlertInterval = setInterval(() => {
-    if (activeClients.size > 0) {
-      const randIdx = Math.floor(Math.random() * notificationTemplates.length);
-      const newNotif = generateNotification(notificationTemplates[randIdx]);
-      broadcastToAll({
-        type: 'NOTIFICATION_RECEIVED',
-        payload: newNotif
-      });
-    }
-  }, 45000);
-
   // 5. VITE MIDDLEWARE CONFIG
   if (!isProd) {
     const vite = await createViteServer({
@@ -238,7 +217,6 @@ async function startServer() {
 
   // Ensure cleanup on sudden container stop
   process.on('SIGTERM', () => {
-    clearInterval(periodicAlertInterval);
     wss.close();
     server.close();
   });
