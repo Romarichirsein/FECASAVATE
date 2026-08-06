@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
-import { Trophy, Search, Filter, ShieldAlert, Award, Calendar, ExternalLink, Mail, Phone, Bookmark, MessageSquare, RefreshCw } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { Search, Award, MessageSquare, RefreshCw } from 'lucide-react';
 import { PalmaresCardSkeleton, PalmaresTableSkeleton } from '../components/Skeletons';
 import { worldPalmares } from '../data/sportData';
 import { PalmaresItem } from '../types';
