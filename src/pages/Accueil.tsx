@@ -9,7 +9,7 @@ import {
   MapPin, Calendar, Users, Trophy, ChevronRight, Star, Quote, ArrowRight, BellRing, Play, Award, FileText, CheckCircle, GraduationCap
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { disciplines, upcomingFights, gradeRecipients, officialExperts } from '../data/sportData';
+import { disciplines, upcomingFights, gradeRecipients, officialExperts, membresWP } from '../data/sportData';
 import VideoLightbox, { FECASAVATE_VIDEOS } from '../components/VideoLightbox';
 import EventCountdown from '../components/EventCountdown';
 import { useLanguage } from '../components/LanguageContext';
@@ -24,6 +24,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
   const [activeTab, setActiveTab] = useState<string>('assaut');
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
   const [selectedVideoId, setSelectedVideoId] = useState<string>('gala-2025');
+  const [memberSectionTab, setMemberSectionTab] = useState<'recipients' | 'membres'>('recipients');
 
   const openVideoLightbox = (videoId: string) => {
     setSelectedVideoId(videoId);
@@ -305,10 +306,10 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                 OFFICIEL FECASAVATE 2026
               </span>
               <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase tracking-tight">
-                Passage de Grade Officiel & Nouvelle Réglementation
+                Passage de Grade Officiel & Annuaire des Membres
               </h3>
               <p className="text-xs text-slate-400 font-sans max-w-2xl">
-                Résultats officiels du passage de grade du 12 Juillet 2026 encadré par l’Officiel Fédéral Me EVINA PATRICK. Découvrez les nouveaux récipiendaires (Gant Rouge, Gant Vert, Gant Bleu, Gant Jaune) et la nouvelle réglementation fédérale.
+                Résultats officiels du passage de grade du 12 Juillet 2026 encadré par l’Officiel Fédéral Me EVINA PATRICK, ainsi que l'annuaire des athlètes et cadres licenciés FECASAVATE.
               </p>
             </div>
 
@@ -321,6 +322,13 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                 <span>Voir les Récipiendaires & Grades</span>
               </button>
               <button
+                onClick={() => onPageChange('membres')}
+                className="px-5 py-3 bg-slate-900 hover:bg-slate-850 border border-slate-700 text-slate-200 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center gap-2"
+              >
+                <Users size={16} />
+                <span>Annuaire Complet</span>
+              </button>
+              <button
                 onClick={() => onPageChange('licences')}
                 className="px-5 py-3 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-200 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center gap-2"
               >
@@ -330,29 +338,92 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
             </div>
           </div>
 
-          {/* ATHLETES FEATURED CAROUSEL PREVIEW */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {gradeRecipients.slice(0, 6).map((r) => (
-              <div key={r.id} className="bg-slate-950 border border-slate-850 p-2.5 rounded-xl space-y-2 text-center group hover:border-slate-700 transition-all">
-                <div className="aspect-square rounded-lg overflow-hidden bg-slate-900">
-                  <img
-                    src={r.imageUrl || 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'}
-                    alt={r.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
-                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'; }}
-                  />
-                </div>
-                <div className="space-y-0.5">
-                  <span className="text-[10px] font-bold text-slate-200 font-display uppercase block truncate">
-                    {r.name.split(' ')[0]} {r.name.split(' ')[1] || ''}
-                  </span>
-                  <span className="text-[9px] font-mono text-feca-gold font-bold block">
-                    {r.grade}
-                  </span>
-                </div>
-              </div>
-            ))}
+          {/* TAB SELECTOR */}
+          <div className="flex items-center gap-2 border-b border-slate-800/80 pb-3 flex-wrap">
+            <button
+              onClick={() => setMemberSectionTab('recipients')}
+              className={`px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all cursor-pointer flex items-center gap-2 ${
+                memberSectionTab === 'recipients'
+                  ? 'bg-feca-red text-white shadow-md shadow-red-950/40'
+                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+              }`}
+            >
+              <Award size={14} />
+              <span>Nouveaux Récipiendaires 2026 ({gradeRecipients.length})</span>
+            </button>
+
+            <button
+              onClick={() => setMemberSectionTab('membres')}
+              className={`px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all cursor-pointer flex items-center gap-2 ${
+                memberSectionTab === 'membres'
+                  ? 'bg-feca-red text-white shadow-md shadow-red-950/40'
+                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+              }`}
+            >
+              <Users size={14} />
+              <span>Membres Licenciés & Staff ({membresWP.length})</span>
+            </button>
           </div>
+
+          {/* ATHLETES & MEMBERS DISPLAY GRID */}
+          {memberSectionTab === 'recipients' ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3">
+              {gradeRecipients.map((r) => (
+                <div key={r.id} className="bg-slate-950 border border-slate-850 p-2.5 rounded-xl space-y-2 text-center group hover:border-feca-gold/50 transition-all flex flex-col justify-between">
+                  <div className="aspect-square rounded-lg overflow-hidden bg-slate-900 relative">
+                    <img
+                      src={r.imageUrl || 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'}
+                      alt={r.name}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
+                      onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'; }}
+                    />
+                    <div className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-slate-950/80 text-[8px] font-mono font-bold text-feca-gold uppercase border border-slate-800">
+                      {r.grade.split(' ')[1] || r.grade}
+                    </div>
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[10px] font-bold text-slate-200 font-display uppercase block truncate" title={r.name}>
+                      {r.name}
+                    </span>
+                    <span className="text-[9px] font-mono text-feca-gold font-bold block truncate">
+                      {r.grade} {r.degree ? `(${r.degree})` : ''}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3">
+              {membresWP.map((m) => (
+                <div key={m.id} className="bg-slate-950 border border-slate-850 p-2.5 rounded-xl space-y-2 text-center group hover:border-emerald-500/50 transition-all flex flex-col justify-between">
+                  <div className="aspect-square rounded-lg overflow-hidden bg-slate-900 relative">
+                    <img
+                      src={m.imageUrl || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80'}
+                      alt={`${m.firstName} ${m.lastName}`}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
+                      onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80'; }}
+                    />
+                    <div className="absolute top-1 right-1 px-1.5 py-0.5 rounded bg-emerald-950/90 text-[8px] font-mono font-bold text-emerald-300 uppercase border border-emerald-500/40">
+                      {m.role}
+                    </div>
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[10px] font-bold text-slate-200 font-display uppercase block truncate" title={`${m.firstName} ${m.lastName}`}>
+                      {m.firstName} {m.lastName}
+                    </span>
+                    <span className="text-[9px] font-mono text-emerald-400 font-semibold block truncate">
+                      {m.grade || m.category}
+                    </span>
+                    {m.club && (
+                      <span className="text-[8px] font-mono text-slate-500 block truncate">
+                        {m.club}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

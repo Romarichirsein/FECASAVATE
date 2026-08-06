@@ -80,6 +80,12 @@ export interface WPMember {
   medailles?: number;
   presentation?: string;
   birth_date?: string;
+  email?: string;
+  mobile?: string;
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+  coverUrl?: string;
   specialty?: string;
   imageUrl?: string;
   grade?: string;
