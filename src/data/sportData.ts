@@ -298,16 +298,6 @@ export const gradeRecipients: GradeRecipient[] = [
     imageUrl: '/images/mandeng_david.jpeg',
     club: 'Ligue Régionale'
   },
-  {
-    id: 'gr-bleu-3',
-    name: 'ETOUNDI Raymond Ludovic',
-    grade: 'Gant Bleu',
-    degree: 'Officiel',
-    date: '12 Juillet 2026',
-    officiel: 'Me EVINA PATRICK',
-    imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
-    club: 'Ligue Régionale'
-  },
   // GANT JAUNE
   {
     id: 'gr-jaune-1',
