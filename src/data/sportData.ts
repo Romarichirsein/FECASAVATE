@@ -752,7 +752,7 @@ export const membresWP: WPMember[] = [
     medailles: 2,
     specialty: 'Savate Assaut & Combat',
     presentation: 'Entraîneur de haut niveau, technicien passionné de la Boxe Française.',
-    imageUrl: '',
+    imageUrl: '/images/members/member_1_profile.jpg',
     grade: 'Coach Fédéral',
   },
   {
@@ -792,7 +792,7 @@ export const membresWP: WPMember[] = [
     medailles: 9,
     specialty: 'Savate Combat',
     presentation: 'Combattant d\'élite, multiple médaillé aux championnats nationaux.',
-    imageUrl: '',
+    imageUrl: '/images/members/member_3_profile.jpg',
     grade: 'Gant Rouge',
   },
   {
