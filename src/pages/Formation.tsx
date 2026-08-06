@@ -556,6 +556,37 @@ export default function Formation({ onPageChange }: FormationProps) {
             );
           })}
         </div>
+
+        {/* DOWNLOAD OFFICIAL LIST */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col items-center gap-4 pt-6 border-t border-slate-800/60"
+        >
+          <p className="text-slate-400 text-sm font-mono text-center">
+            📄 Document officiel signé par le Directeur Technique National — Yaoundé, 13 Juillet 2026
+          </p>
+          <a
+            href="/images/liste_officiel.jpeg"
+            download="Liste_Officielle_Passage_Grade_FECASAVATE_12Juillet2026.jpeg"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-display font-bold text-sm uppercase tracking-widest overflow-hidden shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-feca-gold/30"
+            style={{
+              background: 'linear-gradient(135deg, #b8860b 0%, #f5c842 50%, #b8860b 100%)',
+              backgroundSize: '200% 100%',
+            }}
+          >
+            {/* Shimmer effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-slate-900 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            <span className="text-slate-900">Télécharger la Liste Officielle</span>
+          </a>
+          <p className="text-[11px] text-slate-500 font-mono">
+            Fédération Camerounaise de Savate Boxe Française — Passage de Grade Officiel
+          </p>
+        </motion.div>
       </section>
 
       {/* DOCUMENT SCAN MODAL LIGHTBOX */}
