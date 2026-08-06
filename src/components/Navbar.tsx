@@ -59,6 +59,7 @@ export default function Navbar({
     { id: 'accueil', label: t('nav.accueil') },
     { id: 'about', label: t('nav.about') },
     { id: 'licences', label: t('nav.licences') },
+    { id: 'membres', label: language === 'fr' ? 'Membres' : 'Members' },
     { id: 'champions', label: t('nav.champions') },
     { id: 'contact', label: t('nav.contact') },
   ];

@@ -63,6 +63,28 @@ export interface Member {
   grade?: string;
 }
 
+export interface WPMember {
+  id: string;
+  firstName: string;
+  lastName: string;
+  role: 'tireur' | 'coach' | 'dirigeant' | 'arbitre';
+  gender: 'M' | 'F';
+  category: 'Benjamin' | 'Senior' | 'Professionnel' | 'Legende';
+  club?: string;
+  region?: string;
+  ville?: string;
+  pays?: string;
+  taille?: string;
+  poids?: string;
+  tournoi?: number;
+  medailles?: number;
+  presentation?: string;
+  birth_date?: string;
+  specialty?: string;
+  imageUrl?: string;
+  grade?: string;
+}
+
 export interface GradeRecipient {
   id: string;
   name: string;

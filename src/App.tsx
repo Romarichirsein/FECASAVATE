@@ -18,6 +18,7 @@ import Boutique from './pages/Boutique';
 import Contact from './pages/Contact';
 import Inscription from './pages/Inscription';
 import Licences from './pages/Licences';
+import Membres from './pages/Membres';
 import { UserSession } from './types';
 
 export default function App() {
@@ -44,7 +45,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#/', '');
-      const validPages = ['accueil', 'about', 'blog', 'formation', 'licences', 'palmares', 'champions', 'boutique', 'contact', 'espace-prive'];
+      const validPages = ['accueil', 'about', 'blog', 'formation', 'licences', 'palmares', 'champions', 'boutique', 'contact', 'espace-prive', 'membres'];
       if (hash && validPages.includes(hash)) {
         setCurrentPage(hash);
       } else {
@@ -93,6 +94,8 @@ export default function App() {
         return <Boutique />;
       case 'contact':
         return <Contact />;
+      case 'membres':
+        return <Membres />;
       case 'espace-prive':
         return (
           <Inscription 
