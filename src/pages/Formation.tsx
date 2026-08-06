@@ -4,10 +4,11 @@
  */
 
 import React, { useState } from 'react';
-import { Award, CheckCircle, Play, ChevronRight, Video, FileText, Compass, GraduationCap, Clock, Flame, Maximize2 } from 'lucide-react';
+import { Award, CheckCircle, Play, ChevronRight, Video, FileText, Compass, GraduationCap, Clock, Flame, Maximize2, ShieldCheck, Eye, Download, UserCheck, Sparkles, Filter, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import VideoLightbox from '../components/VideoLightbox';
 import { useLanguage } from '../components/LanguageContext';
+import { gradeRecipients, officialExperts } from '../data/sportData';
 
 interface FormationProps {
   onPageChange: (page: string) => void;
@@ -18,6 +19,8 @@ export default function Formation({ onPageChange }: FormationProps) {
   const [activeVideoPart, setActiveVideoPart] = useState<number>(1);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
+  const [docModalOpen, setDocModalOpen] = useState<boolean>(false);
+  const [gradeFilter, setGradeFilter] = useState<string>('Tous');
 
   const getModuleVideoId = (num: number): string => {
     switch (num) {
@@ -335,6 +338,269 @@ export default function Formation({ onPageChange }: FormationProps) {
           </div>
         </div>
       </section>
+
+      {/* ── 3.5 OFFICIEL FÉDÉRAL & EXPERT TECHNIQUE : Me PATRICK TIMBERT EVINA ── */}
+      <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-feca-night border border-slate-800 p-6 sm:p-10 rounded-3xl space-y-8 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-feca-red/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+          <div>
+            <span className="text-[10px] font-mono text-feca-gold font-bold uppercase tracking-widest bg-feca-gold/10 border border-feca-gold/30 px-3 py-1 rounded-md inline-block mb-2">
+              ENCADREMENT TECHNIQUE & ARBITRAGE
+            </span>
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase tracking-tight">
+              Officiel Fédéral Me Patrick Timbert EVINA
+            </h2>
+            <span className="text-xs text-slate-400 font-mono block mt-1">
+              Expert International & Encadrant Principal du Passage de Grade Officiel
+            </span>
+          </div>
+
+          <div className="px-4 py-2 bg-slate-950 border border-feca-gold/30 rounded-xl text-right shrink-0">
+            <span className="text-[9px] font-mono text-slate-400 block uppercase">SUPERVISION DIPLÔMÉE</span>
+            <span className="text-xs font-bold text-feca-gold font-mono">Expert Multi-Disciplines</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Photo Frame */}
+          <div className="lg:col-span-4 relative group">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-feca-gold/40 shadow-2xl shadow-yellow-950/20 aspect-3/4 max-w-sm mx-auto">
+              <img 
+                src="/images/patrick_evina.jpeg" 
+                alt="Me Patrick Timbert Evina"
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-4 left-4 right-4 text-center space-y-1">
+                <span className="text-xs font-display font-black text-white uppercase tracking-wider block">
+                  Me Patrick Timbert EVINA
+                </span>
+                <span className="text-[10px] text-feca-gold font-mono block">
+                  Officiel Fédéral Homologué
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Diplômes & Palmarès */}
+          <div className="lg:col-span-8 space-y-6">
+            
+            {/* DIPLÔMES */}
+            <div className="bg-slate-950/80 border border-slate-800 p-5 rounded-2xl space-y-3">
+              <div className="flex items-center gap-2 text-feca-gold">
+                <GraduationCap className="w-5 h-5" />
+                <h3 className="font-display font-extrabold text-sm uppercase tracking-wider text-slate-100">
+                  Diplômes Officiels & Certifications
+                </h3>
+              </div>
+              <ul className="space-y-2 text-xs text-slate-300 font-sans">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Boxe Française :</strong> BEES 1 – BPJEPS</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Kick Boxing, Boxe thaï, Pancrace :</strong> BPJEPS SPORTS DE CONTACT</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span><strong>Lutte contact :</strong> BMF 2</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* PALMARÈS */}
+            <div className="bg-slate-950/80 border border-slate-800 p-5 rounded-2xl space-y-3">
+              <div className="flex items-center gap-2 text-feca-red">
+                <Award className="w-5 h-5" />
+                <h3 className="font-display font-extrabold text-sm uppercase tracking-wider text-slate-100">
+                  Palmarès de Prestige International
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 font-sans">
+                <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-800">
+                  <span className="text-[10px] font-mono text-feca-gold font-bold uppercase block">Boxe Française</span>
+                  <span className="font-bold text-slate-200">Champion de Belgique combat & Champion du monde vétéran</span>
+                </div>
+                <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-800">
+                  <span className="text-[10px] font-mono text-blue-400 font-bold uppercase block">Boxe Anglaise</span>
+                  <span className="font-bold text-slate-200">Champion de France militaire</span>
+                </div>
+                <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-800">
+                  <span className="text-[10px] font-mono text-red-400 font-bold uppercase block">Kick Boxing</span>
+                  <span className="font-bold text-slate-200">Champion du monde WFC et XFC</span>
+                </div>
+                <div className="p-2.5 bg-slate-900/60 rounded-xl border border-slate-800">
+                  <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase block">Boxe Thaï & Lutte</span>
+                  <span className="font-bold text-slate-200">Champion de France C1 Pro & 4X Champion de France / Europe Lutte</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3.6 PASSAGE DE GRADE OFFICIEL DU 12 JUILLET 2026 ── */}
+      <section className="bg-feca-night border border-slate-800 p-6 sm:p-10 rounded-3xl space-y-8 shadow-2xl relative overflow-hidden">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-slate-850 pb-6">
+          <div>
+            <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-widest bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-md inline-block mb-2">
+              SESSION NATIONALE RÉSULTATS
+            </span>
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase tracking-tight">
+              Passage de Grade Officiel du 12 Juillet 2026
+            </h2>
+            <span className="text-xs text-slate-400 font-mono block mt-1">
+              Liste Officielle des Récipiendaires • Encadré par Me EVINA PATRICK • DTN Ngo Nlep Henriette / Akouan Pharelle
+            </span>
+          </div>
+
+          <button
+            onClick={() => setDocModalOpen(true)}
+            className="px-4 py-2.5 bg-slate-950 hover:bg-slate-900 border border-feca-gold/40 text-feca-gold font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-yellow-950/10"
+          >
+            <Eye size={16} />
+            <span>Voir Document Officiel (Scan)</span>
+          </button>
+        </div>
+
+        {/* GRADE FILTER BUTTONS */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs text-slate-400 font-mono flex items-center gap-1 mr-2">
+            <Filter size={14} /> Grade :
+          </span>
+          {['Tous', 'Gant Jaune', 'Gant Rouge', 'Gant Vert', 'Gant Bleu'].map((g) => (
+            <button
+              key={g}
+              onClick={() => setGradeFilter(g)}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-display font-bold uppercase transition-all cursor-pointer ${
+                gradeFilter === g
+                  ? 'bg-feca-red text-white shadow-md'
+                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+              }`}
+            >
+              {g}
+            </button>
+          ))}
+        </div>
+
+        {/* ATHLETES RECIPIENDANCE GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {(gradeFilter === 'Tous' ? gradeRecipients : gradeRecipients.filter(r => r.grade === gradeFilter)).map((r) => {
+            const isGantRouge = r.grade === 'Gant Rouge';
+            const isGantVert = r.grade === 'Gant Vert';
+            const isGantBleu = r.grade === 'Gant Bleu';
+
+            const badgeBg = isGantRouge 
+              ? 'bg-red-950/80 border-red-500/50 text-red-200 shadow-red-950/50' 
+              : isGantVert 
+              ? 'bg-emerald-950/80 border-emerald-500/50 text-emerald-200 shadow-emerald-950/50' 
+              : isGantBleu 
+              ? 'bg-blue-950/80 border-blue-500/50 text-blue-200 shadow-blue-950/50' 
+              : 'bg-amber-950/80 border-amber-500/50 text-amber-200 shadow-amber-950/50';
+
+            const dotBg = isGantRouge 
+              ? 'bg-red-500' 
+              : isGantVert 
+              ? 'bg-emerald-500' 
+              : isGantBleu 
+              ? 'bg-blue-500' 
+              : 'bg-amber-400';
+
+            return (
+              <motion.div
+                key={r.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-slate-950 border border-slate-850 hover:border-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group"
+              >
+                {/* Photo Header */}
+                <div className="aspect-4/3 relative overflow-hidden bg-slate-900">
+                  <img
+                    src={r.imageUrl || 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'}
+                    alt={r.name}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                  
+                  {/* Grade Badge */}
+                  <div className={`absolute top-3 right-3 px-2.5 py-1 rounded-lg border text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md ${badgeBg}`}>
+                    <span className={`w-2 h-2 rounded-full ${dotBg}`} />
+                    <span>{r.grade}</span>
+                  </div>
+                </div>
+
+                {/* Info Body */}
+                <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 className="font-display font-extrabold text-sm text-slate-100 uppercase leading-snug group-hover:text-feca-gold transition-colors">
+                      {r.name}
+                    </h4>
+                    {r.degree && (
+                      <span className="text-[11px] font-mono text-feca-gold font-semibold block mt-0.5">
+                        {r.degree}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-900 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                    <span>Passage du {r.date}</span>
+                    <span className="text-emerald-400 font-bold">Validé FISav</span>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* DOCUMENT SCAN MODAL LIGHTBOX */}
+      <AnimatePresence>
+        {docModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4"
+            onClick={() => setDocModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-feca-gold" />
+                  <span className="font-display font-bold text-sm uppercase text-slate-100">
+                    Document Officiel - Passage de Grade du 12 Juillet 2026
+                  </span>
+                </div>
+                <button
+                  onClick={() => setDocModalOpen(false)}
+                  className="p-1.5 bg-slate-950 border border-slate-800 rounded-xl text-slate-400 hover:text-white cursor-pointer"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              <div className="p-4 overflow-y-auto flex-1 flex justify-center bg-slate-950">
+                <img
+                  src="/images/passage_grade_12jul2026.jpeg"
+                  alt="Attestation Officielle Passage de Grade 12 Juillet 2026"
+                  className="max-w-full h-auto rounded-xl shadow-2xl border border-slate-800"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* 4. PROJET DE NOUVELLE RÉGLEMENTATION DES PASSAGES DE GRADE */}
       <section className="bg-feca-night border border-slate-800 p-6 sm:p-10 rounded-3xl space-y-8 shadow-2xl relative overflow-hidden">

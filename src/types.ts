@@ -60,6 +60,28 @@ export interface Member {
   specialty?: string;
   achievements?: string[];
   imageUrl: string;
+  grade?: string;
+}
+
+export interface GradeRecipient {
+  id: string;
+  name: string;
+  grade: 'Gant Bleu' | 'Gant Vert' | 'Gant Rouge' | 'Gant Jaune' | 'Gant Blanc' | 'GAT';
+  degree?: string;
+  date: string;
+  officiel: string;
+  imageUrl?: string;
+  club?: string;
+}
+
+export interface OfficialExpert {
+  id: string;
+  name: string;
+  title: string;
+  role: string;
+  diplomes: string[];
+  palmares: string[];
+  imageUrl: string;
 }
 
 export interface FightCardMatch {

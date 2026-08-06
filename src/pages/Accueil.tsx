@@ -6,10 +6,10 @@
 import React, { useState } from 'react';
 import { 
   Swords, ShieldAlert, Shield, Crown, Music, Zap, 
-  MapPin, Calendar, Users, Trophy, ChevronRight, Star, Quote, ArrowRight, BellRing, Play
+  MapPin, Calendar, Users, Trophy, ChevronRight, Star, Quote, ArrowRight, BellRing, Play, Award, FileText, CheckCircle, GraduationCap
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { disciplines, upcomingFights } from '../data/sportData';
+import { disciplines, upcomingFights, gradeRecipients, officialExperts } from '../data/sportData';
 import VideoLightbox, { FECASAVATE_VIDEOS } from '../components/VideoLightbox';
 import EventCountdown from '../components/EventCountdown';
 import { useLanguage } from '../components/LanguageContext';
@@ -294,6 +294,66 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
           </div>
         </div>
 
+      </section>
+
+      {/* 2.5 PASSAGE DE GRADE OFFICIEL & REGLEMENTATION HIGHLIGHT */}
+      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-6">
+        <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-feca-night border border-slate-800 p-6 sm:p-10 rounded-3xl space-y-6 shadow-2xl relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 border-b border-slate-800 pb-6">
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-widest bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-md inline-block">
+                OFFICIEL FECASAVATE 2026
+              </span>
+              <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase tracking-tight">
+                Passage de Grade Officiel & Nouvelle Réglementation
+              </h3>
+              <p className="text-xs text-slate-400 font-sans max-w-2xl">
+                Résultats officiels du passage de grade du 12 Juillet 2026 encadré par l’Officiel Fédéral Me EVINA PATRICK. Découvrez les nouveaux récipiendaires (Gant Rouge, Gant Vert, Gant Bleu, Gant Jaune) et la nouvelle réglementation fédérale.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <button
+                onClick={() => onPageChange('formation')}
+                className="px-5 py-3 bg-feca-gold hover:bg-yellow-500 text-slate-950 font-display font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-yellow-950/20 cursor-pointer flex items-center gap-2"
+              >
+                <Award size={16} />
+                <span>Voir les Récipiendaires & Grades</span>
+              </button>
+              <button
+                onClick={() => onPageChange('licences')}
+                className="px-5 py-3 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-200 font-display font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer flex items-center gap-2"
+              >
+                <FileText size={16} />
+                <span>Demander une Licence</span>
+              </button>
+            </div>
+          </div>
+
+          {/* ATHLETES FEATURED CAROUSEL PREVIEW */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+            {gradeRecipients.slice(0, 6).map((r) => (
+              <div key={r.id} className="bg-slate-950 border border-slate-850 p-2.5 rounded-xl space-y-2 text-center group hover:border-slate-700 transition-all">
+                <div className="aspect-square rounded-lg overflow-hidden bg-slate-900">
+                  <img
+                    src={r.imageUrl || 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'}
+                    alt={r.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform"
+                    onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'; }}
+                  />
+                </div>
+                <div className="space-y-0.5">
+                  <span className="text-[10px] font-bold text-slate-200 font-display uppercase block truncate">
+                    {r.name.split(' ')[0]} {r.name.split(' ')[1] || ''}
+                  </span>
+                  <span className="text-[9px] font-mono text-feca-gold font-bold block">
+                    {r.grade}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* 3. MAJOR FIGHT-CARD PROMOTION (THE MAIN EVENT NOV 29, 2025) */}

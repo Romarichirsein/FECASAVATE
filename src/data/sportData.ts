@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Discipline, PalmaresItem, TimelineEvent, HeroFigure, BlogArticle, Member, FightCardMatch, Product, AppNotification } from '../types';
+import { Discipline, PalmaresItem, TimelineEvent, HeroFigure, BlogArticle, Member, FightCardMatch, Product, AppNotification, GradeRecipient, OfficialExpert } from '../types';
 
 export const disciplines: Discipline[] = [
   {
@@ -222,7 +222,190 @@ export const blogArticles: BlogArticle[] = [
   }
 ];
 
+export const officialExperts: OfficialExpert[] = [
+  {
+    id: 'exp1',
+    name: 'Me Patrick Timbert EVINA',
+    title: 'Officiel Fédéral & Expert Technique International',
+    role: 'Officiel Fédéral / Encadrant des Passages de Grade',
+    diplomes: [
+      'Boxe Française : BEES 1 – BPJEPS',
+      'Kick Boxing, Boxe thaï, Pancrace : BPJEPS SPORTS DE CONTACT',
+      'Lutte contact : BMF 2'
+    ],
+    palmares: [
+      'Boxe Française : Champion de Belgique combat & Champion du monde vétéran',
+      'Boxe anglaise : Champion de France militaire',
+      'Kick Boxing : Champion du monde WFC et XFC',
+      'Boxe thaï : Champion de France C1 pro Fight & Vice-champion du monde WFC',
+      'Lutte contact : 4 X Champion de France & Champion d’Europe'
+    ],
+    imageUrl: '/images/patrick_evina.jpeg'
+  }
+];
+
+export const gradeRecipients: GradeRecipient[] = [
+  // GANT ROUGE
+  {
+    id: 'gr-rouge-1',
+    name: 'NYEMECK NGASSA Miguel',
+    grade: 'Gant Rouge',
+    degree: '3ème degré (Couleur du gang Vert)',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/nyemeck_ngassa.jpeg',
+    club: 'Ligue Régionale'
+  },
+  // GANT VERT
+  {
+    id: 'gr-vert-1',
+    name: 'MANDENG YOUMBI Geovanne',
+    grade: 'Gant Vert',
+    degree: '1er degré',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/mandeng_youmbi.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-vert-2',
+    name: 'MFEGUE NDJESSA Christian',
+    grade: 'Gant Vert',
+    degree: '1er degré',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/mfegue_ndjessa.jpeg',
+    club: 'Ligue Régionale'
+  },
+  // GANT BLEU
+  {
+    id: 'gr-bleu-1',
+    name: 'MANDENG MASSE I Noé',
+    grade: 'Gant Bleu',
+    degree: '1er degré',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/mandeng_noe.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-bleu-2',
+    name: 'MANDENG MASSE II David',
+    grade: 'Gant Bleu',
+    degree: '1er degré',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/mandeng_david.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-bleu-3',
+    name: 'ETOUNDI Raymond Ludovic',
+    grade: 'Gant Bleu',
+    degree: 'Officiel',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+    club: 'Ligue Régionale'
+  },
+  // GANT JAUNE
+  {
+    id: 'gr-jaune-1',
+    name: 'TELLA FAHA Bertrand',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/tella_faha.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-2',
+    name: 'FOTSINE FOGANG Emmanuel',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/fotsine_fogang.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-3',
+    name: 'MENGUE Tristan',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-4',
+    name: 'NGOCK Michel-Archange',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-5',
+    name: 'WAFEU Théodore',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&auto=format&fit=crop&q=80',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-6',
+    name: 'NDONGO Alfred',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=400&auto=format&fit=crop&q=80',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-7',
+    name: 'NDZIE BOMBA Elisabeth',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/ndzie_bomba.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-8',
+    name: 'AYISSI BESSALA',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/ayissi_bessala.jpeg',
+    club: 'Ligue Régionale'
+  },
+  {
+    id: 'gr-jaune-9',
+    name: 'NOUAGHUE KOAGNE Jean François',
+    grade: 'Gant Jaune',
+    date: '12 Juillet 2026',
+    officiel: 'Me EVINA PATRICK',
+    imageUrl: '/images/nouaghue_koagne.jpeg',
+    club: 'Ligue Régionale'
+  }
+];
+
 export const championsList: Member[] = [
+  {
+    id: 'm-evina',
+    firstName: 'Patrick Timbert',
+    lastName: 'EVINA',
+    role: 'arbitre',
+    gender: 'M',
+    category: 'Legende',
+    club: 'Direction Technique Fédérale',
+    specialty: 'Officiel Fédéral & Expert Multi-disciplines',
+    achievements: ['Encadrant du Passage de Grade Officiel du 12 Juillet 2026', 'Champion du Monde Vétéran Savate', '4x Champion de France & Champion d\'Europe Lutte Contact'],
+    imageUrl: '/images/patrick_evina.jpeg',
+    grade: 'Officiel Fédéral'
+  },
   {
     id: 'm1',
     firstName: 'Akouan',
@@ -232,8 +415,139 @@ export const championsList: Member[] = [
     category: 'Professionnel',
     club: 'Académie de Savate de Yaoundé',
     specialty: 'Savate Combat & Pro',
-    achievements: ['Champion du Monde Combat 2018 (Chine)', 'Champion du Monde Pro 2023 (Bulgarie)'],
-    imageUrl: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80'
+    achievements: ['Champion du Monde Combat 2018 (Chine)', 'Champion du Monde Pro 2023 (Bulgarie)', 'Directeur Technique National'],
+    imageUrl: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&auto=format&fit=crop&q=80',
+    grade: 'Gant d\'Argent'
+  },
+  {
+    id: 'm-nyemeck',
+    firstName: 'Miguel',
+    lastName: 'NYEMECK NGASSA',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Combat',
+    achievements: ['Récipiendaire Gant Rouge 3ème degré (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/nyemeck_ngassa.jpeg',
+    grade: 'Gant Rouge 3°'
+  },
+  {
+    id: 'm-mandeng-youmbi',
+    firstName: 'Geovanne',
+    lastName: 'MANDENG YOUMBI',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut & Combat',
+    achievements: ['Récipiendaire Gant Vert 1er degré (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/mandeng_youmbi.jpeg',
+    grade: 'Gant Vert 1°'
+  },
+  {
+    id: 'm-mfegue',
+    firstName: 'Christian',
+    lastName: 'MFEGUE NDJESSA',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Vert 1er degré (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/mfegue_ndjessa.jpeg',
+    grade: 'Gant Vert 1°'
+  },
+  {
+    id: 'm-mandeng-noe',
+    firstName: 'Noé',
+    lastName: 'MANDENG MASSE I',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Bleu 1er degré (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/mandeng_noe.jpeg',
+    grade: 'Gant Bleu 1°'
+  },
+  {
+    id: 'm-mandeng-david',
+    firstName: 'David',
+    lastName: 'MANDENG MASSE II',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Bleu 1er degré (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/mandeng_david.jpeg',
+    grade: 'Gant Bleu 1°'
+  },
+  {
+    id: 'm-tella',
+    firstName: 'Bertrand',
+    lastName: 'TELLA FAHA',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Jaune (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/tella_faha.jpeg',
+    grade: 'Gant Jaune'
+  },
+  {
+    id: 'm-fotsine',
+    firstName: 'Emmanuel',
+    lastName: 'FOTSINE FOGANG MBONTSE MBA',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Jaune (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/fotsine_fogang.jpeg',
+    grade: 'Gant Jaune'
+  },
+  {
+    id: 'm-ndzie',
+    firstName: 'Elisabeth',
+    lastName: 'NDZIE BOMBA',
+    role: 'tireur',
+    gender: 'F',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut Féminin',
+    achievements: ['Récipiendaire Gant Jaune (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/ndzie_bomba.jpeg',
+    grade: 'Gant Jaune'
+  },
+  {
+    id: 'm-ayissi',
+    firstName: 'Ayissi',
+    lastName: 'BESSALA',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Jaune (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/ayissi_bessala.jpeg',
+    grade: 'Gant Jaune'
+  },
+  {
+    id: 'm-nouaghue',
+    firstName: 'Jean François',
+    lastName: 'NOUAGHUE KOAGNE',
+    role: 'tireur',
+    gender: 'M',
+    category: 'Senior',
+    club: 'Ligue Régionale Fecasavate',
+    specialty: 'Savate Assaut',
+    achievements: ['Récipiendaire Gant Jaune (Passage de Grade du 12 Juillet 2026)'],
+    imageUrl: '/images/nouaghue_koagne.jpeg',
+    grade: 'Gant Jaune'
   },
   {
     id: 'm2',
@@ -245,7 +559,8 @@ export const championsList: Member[] = [
     club: 'Club Léopard de Boxe Yaoundé',
     specialty: 'Savate Assaut & Combat',
     achievements: ['Vice-championne du Monde Assaut 2022 (Italie)', 'Vice-championne du Monde Combat 2023 (France)'],
-    imageUrl: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&auto=format&fit=crop&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&auto=format&fit=crop&q=80',
+    grade: 'Gant d\'Argent'
   },
   {
     id: 'm3',
