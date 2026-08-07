@@ -479,7 +479,7 @@ export default function Formation({ onPageChange }: FormationProps) {
               className={`px-3.5 py-1.5 rounded-xl text-xs font-display font-bold uppercase transition-all cursor-pointer ${
                 gradeFilter === g
                   ? 'bg-feca-red text-white shadow-md'
-                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-100'
               }`}
             >
               {g}

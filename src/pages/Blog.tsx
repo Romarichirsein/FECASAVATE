@@ -131,7 +131,7 @@ export default function Blog() {
                 className={`px-3 py-2 rounded-lg text-xs font-semibold whitespace-nowrap cursor-pointer transition-all ${
                   selectedCategory === cat 
                     ? 'bg-feca-red text-white' 
-                    : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+                    : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-100'
                 }`}
               >
                 {cat === 'all' ? (language === 'fr' ? 'Tous les Thèmes' : 'All Themes') : cat}

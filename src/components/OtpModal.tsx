@@ -181,7 +181,7 @@ export default function OtpModal({ isOpen, onClose, onVerifySuccess, phoneOrEmai
                     value={num}
                     onChange={(e) => handleChange(i, e.target.value)}
                     onKeyDown={(e) => handleKeyDown(i, e)}
-                    className="w-12 h-14 text-center font-display font-extrabold text-lg text-white bg-slate-950 border border-slate-800 rounded-xl focus:border-feca-red focus:ring-1 focus:ring-feca-red transition-all shadow-inner outline-hidden"
+                    className="w-12 h-14 text-center font-display font-extrabold text-lg text-slate-100 bg-slate-950 border border-slate-800 rounded-xl focus:border-feca-red focus:ring-1 focus:ring-feca-red transition-all shadow-inner outline-hidden"
                   />
                 ))}
               </div>

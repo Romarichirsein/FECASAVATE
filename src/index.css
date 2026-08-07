@@ -120,3 +120,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Form Controls & Inputs - Automatic Theme Text & Background Color */
+input, textarea, select {
+  color: var(--slate-100) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--slate-400);
+}
+
+option {
+  background-color: var(--feca-dark);
+  color: var(--slate-100);
+}
+

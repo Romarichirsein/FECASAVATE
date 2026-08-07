@@ -159,7 +159,7 @@ export default function Contact() {
                   placeholder="M. Romaric NGUEMI"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-white rounded-xl outline-hidden font-sans font-medium"
+                  className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-slate-100 rounded-xl outline-hidden font-sans font-medium"
                 />
               </div>
 
@@ -171,7 +171,7 @@ export default function Contact() {
                   placeholder="romaric@eg-sports.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-white rounded-xl outline-hidden font-sans font-medium"
+                  className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-slate-100 rounded-xl outline-hidden font-sans font-medium"
                 />
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function Contact() {
                 placeholder="Ex. Demande de licence club Lions Indomptables"
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-white rounded-xl outline-hidden font-sans font-medium"
+                className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-slate-100 rounded-xl outline-hidden font-sans font-medium"
               />
             </div>
 
@@ -196,7 +196,7 @@ export default function Contact() {
                 placeholder="Rédigez votre demande ici avec précision..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-white rounded-xl outline-hidden font-sans"
+                className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 focus:border-feca-red text-xs text-slate-100 rounded-xl outline-hidden font-sans"
               />
             </div>
 

@@ -274,7 +274,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
               className={`py-2 text-xs font-display font-bold uppercase tracking-wider rounded-xl cursor-pointer transition-all ${
                 activeTab === 'connexion' 
                   ? 'bg-gradient-to-r from-feca-red to-rose-600 text-white shadow-lg' 
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/30'
               }`}
             >
               Connexion
@@ -287,7 +287,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
               className={`py-2 text-xs font-display font-bold uppercase tracking-wider rounded-xl cursor-pointer transition-all ${
                 activeTab === 'inscription' 
                   ? 'bg-gradient-to-r from-feca-red to-rose-600 text-white shadow-lg' 
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/30'
               }`}
             >
               S'inscrire
@@ -324,7 +324,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                     placeholder="Ex. akouan237"
                     value={formData.username}
                     onChange={handleInputChange}
-                    className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                    className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                   />
                 </div>
               </div>
@@ -341,7 +341,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                         placeholder="Pharelle"
                         value={formData.firstName}
                         onChange={handleInputChange}
-                        className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                        className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                       />
                     </div>
                     <div className="space-y-1">
@@ -353,7 +353,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                         placeholder="AKOUAN"
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                        className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                       />
                     </div>
                   </div>
@@ -371,7 +371,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                         placeholder="akouan@gmail.com"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                        className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                       />
                     </div>
                   </div>
@@ -399,7 +399,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                         placeholder="+237 699 886 386"
                         value={formData.whatsapp}
                         onChange={handleInputChange}
-                        className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                        className="w-full py-2.5 px-3 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                       />
                     </div>
                   </div>
@@ -419,7 +419,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                     placeholder="••••••••"
                     value={formData.password}
                     onChange={handleInputChange}
-                    className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                    className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                   />
                 </div>
               </div>
@@ -438,7 +438,7 @@ export default function Inscription({ session, onLoginSuccess, onLogout }: Inscr
                       placeholder="••••••••"
                       value={formData.confirmPassword}
                       onChange={handleInputChange}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden font-medium"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden font-medium"
                     />
                   </div>
                 </div>

@@ -227,7 +227,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
                 className={`p-4 rounded-xl border text-center transition-all duration-300 flex flex-col items-center gap-2 cursor-pointer ${
                   isSelected 
                     ? 'bg-feca-night border-feca-gold text-feca-gold shadow-lg shadow-feca-gold/5' 
-                    : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700 text-slate-300 hover:text-white'
+                    : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700 text-slate-300 hover:text-slate-100'
                 }`}
               >
                 <div className={`p-2 rounded-lg bg-slate-950 ${isSelected ? 'border border-feca-gold' : ''}`}>
@@ -345,7 +345,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
               className={`px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all cursor-pointer flex items-center gap-2 ${
                 memberSectionTab === 'recipients'
                   ? 'bg-feca-red text-white shadow-md shadow-red-950/40'
-                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-100 hover:border-slate-700'
               }`}
             >
               <Award size={14} />
@@ -357,7 +357,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
               className={`px-4 py-2 rounded-xl text-xs font-display font-bold uppercase transition-all cursor-pointer flex items-center gap-2 ${
                 memberSectionTab === 'membres'
                   ? 'bg-feca-red text-white shadow-md shadow-red-950/40'
-                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
+                  : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-100 hover:border-slate-700'
               }`}
             >
               <Users size={14} />

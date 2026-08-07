@@ -122,7 +122,7 @@ export default function Boutique() {
               className={`px-3.5 py-2 rounded-lg text-xs font-bold uppercase transition-all whitespace-nowrap cursor-pointer ${
                 selectedCat === cat 
                   ? 'bg-feca-gold text-slate-950 font-black shadow-lg shadow-feca-gold/10' 
-                  : 'bg-slate-950 border border-slate-850 text-slate-400 hover:text-white'
+                  : 'bg-slate-950 border border-slate-850 text-slate-400 hover:text-slate-100'
               }`}
             >
               {cat === 'all' ? 'Tous les produits' : cat}
@@ -363,7 +363,7 @@ export default function Boutique() {
                     type="text"
                     placeholder="M. Romaric NGUEMI"
                     defaultValue="Romaric NGUEMI"
-                    className="w-full py-2 px-3 bg-slate-950 border border-slate-800 text-xs text-white rounded-lg outline-hidden"
+                    className="w-full py-2 px-3 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-lg outline-hidden"
                   />
                 </div>
 
@@ -373,7 +373,7 @@ export default function Boutique() {
                     required
                     type="tel"
                     placeholder="+237 699 886 386"
-                    className="w-full py-2 px-3 bg-slate-950 border border-slate-800 text-xs text-white rounded-lg outline-hidden"
+                    className="w-full py-2 px-3 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-lg outline-hidden"
                   />
                 </div>
 

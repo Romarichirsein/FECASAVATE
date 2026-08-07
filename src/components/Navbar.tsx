@@ -144,7 +144,7 @@ export default function Navbar({
                     className={`relative px-3 py-2 text-[11px] uppercase tracking-wider font-semibold rounded-lg transition-all duration-200 cursor-pointer outline-none select-none ${
                       isActive 
                         ? 'text-feca-gold' 
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+                        : 'text-slate-300 hover:text-slate-100 hover:bg-slate-800/40'
                     }`}
                   >
                     {isActive && (
@@ -166,7 +166,7 @@ export default function Navbar({
                   className={`relative px-3 py-2 text-[11px] uppercase tracking-wider font-semibold rounded-lg transition-all duration-200 cursor-pointer outline-none select-none flex items-center gap-1 ${
                     isPalmActive 
                       ? 'text-feca-gold' 
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
+                      : 'text-slate-300 hover:text-slate-100 hover:bg-slate-800/40'
                   }`}
                 >
                   {isPalmActive && (
@@ -202,7 +202,7 @@ export default function Navbar({
                             className={`w-full flex items-center gap-3 px-4 py-2.5 text-xs font-semibold transition-all cursor-pointer ${
                               isSubActive
                                 ? 'text-feca-gold bg-feca-gold/10 border-l-2 border-feca-gold'
-                                : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                                : 'text-slate-300 hover:text-slate-100 hover:bg-slate-800/50'
                             }`}
                           >
                             <span className={isSubActive ? 'text-feca-gold' : 'text-slate-500'}>{sub.icon}</span>
@@ -347,7 +347,7 @@ export default function Navbar({
                       className={`w-full text-left px-4 py-3 text-xs uppercase tracking-wider font-bold rounded-xl transition-all ${
                         isActive 
                           ? 'bg-gradient-to-r from-feca-red/10 to-transparent text-feca-gold border-l-4 border-feca-gold' 
-                          : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                          : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
                       }`}
                     >
                       {item.label}
@@ -362,7 +362,7 @@ export default function Navbar({
                     className={`w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-wider font-bold transition-all cursor-pointer ${
                       isPalmActive 
                         ? 'bg-gradient-to-r from-feca-red/10 to-transparent text-feca-gold border-l-4 border-feca-gold' 
-                        : 'text-slate-300 hover:bg-slate-900 hover:text-white'
+                        : 'text-slate-300 hover:bg-slate-900 hover:text-slate-100'
                     }`}
                   >
                     <span>{language === 'fr' ? 'Palmarès & Plus' : 'Palmarès & More'}</span>
@@ -387,7 +387,7 @@ export default function Navbar({
                               className={`w-full flex items-center gap-3 px-6 py-2.5 text-xs font-semibold transition-all cursor-pointer ${
                                 isSubActive
                                   ? 'text-feca-gold bg-feca-gold/10 border-l-2 border-feca-gold'
-                                  : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
+                                  : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/40'
                               }`}
                             >
                               <span className={isSubActive ? 'text-feca-gold' : 'text-slate-600'}>{sub.icon}</span>

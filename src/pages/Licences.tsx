@@ -149,7 +149,7 @@ export default function Licences() {
             className={`py-3.5 px-4 text-xs font-display font-black uppercase tracking-wider rounded-xl cursor-pointer transition-all flex items-center justify-center gap-2 ${
               activeTab === 'licence' 
                 ? 'bg-gradient-to-r from-feca-red via-rose-600 to-feca-red text-white shadow-lg shadow-rose-950/40 border border-rose-500/30' 
-                : 'text-slate-400 hover:text-white hover:bg-slate-900/50'
+                : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/30'
             }`}
           >
             <User size={16} />
@@ -165,7 +165,7 @@ export default function Licences() {
             className={`py-3.5 px-4 text-xs font-display font-black uppercase tracking-wider rounded-xl cursor-pointer transition-all flex items-center justify-center gap-2 ${
               activeTab === 'affiliation' 
                 ? 'bg-gradient-to-r from-feca-red via-rose-600 to-feca-red text-white shadow-lg shadow-rose-950/40 border border-rose-500/30' 
-                : 'text-slate-400 hover:text-white hover:bg-slate-900/50'
+                : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/30'
             }`}
           >
             <Building size={16} />
@@ -320,7 +320,7 @@ export default function Licences() {
                         placeholder="Ex. AKOUAN"
                         value={licenceForm.lastName}
                         onChange={e => setLicenceForm({ ...licenceForm, lastName: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -332,7 +332,7 @@ export default function Licences() {
                         placeholder="Ex. Pharelle"
                         value={licenceForm.firstName}
                         onChange={e => setLicenceForm({ ...licenceForm, firstName: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
                   </div>
@@ -367,7 +367,7 @@ export default function Licences() {
                         placeholder="Ex. Académie Yaoundé 5"
                         value={licenceForm.clubName}
                         onChange={e => setLicenceForm({ ...licenceForm, clubName: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
                   </div>
@@ -381,7 +381,7 @@ export default function Licences() {
                         placeholder="+237 699 886 386"
                         value={licenceForm.phone}
                         onChange={e => setLicenceForm({ ...licenceForm, phone: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -393,7 +393,7 @@ export default function Licences() {
                         placeholder="nom@exemple.cm"
                         value={licenceForm.email}
                         onChange={e => setLicenceForm({ ...licenceForm, email: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
                   </div>
@@ -406,7 +406,7 @@ export default function Licences() {
                         placeholder="Yaoundé"
                         value={licenceForm.city}
                         onChange={e => setLicenceForm({ ...licenceForm, city: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -498,7 +498,7 @@ export default function Licences() {
                         placeholder="Ex. Club Léopard de Boxe Française"
                         value={affiliationForm.clubName}
                         onChange={e => setAffiliationForm({ ...affiliationForm, clubName: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -509,7 +509,7 @@ export default function Licences() {
                         placeholder="Ex. CLBF"
                         value={affiliationForm.acronym}
                         onChange={e => setAffiliationForm({ ...affiliationForm, acronym: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
                   </div>
@@ -522,7 +522,7 @@ export default function Licences() {
                         placeholder="Yaoundé / Douala"
                         value={affiliationForm.city}
                         onChange={e => setAffiliationForm({ ...affiliationForm, city: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -554,7 +554,7 @@ export default function Licences() {
                       placeholder="Ex. Mairie de Yaoundé 5, Salle des fêtes"
                       value={affiliationForm.address}
                       onChange={e => setAffiliationForm({ ...affiliationForm, address: e.target.value })}
-                      className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                      className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                     />
                   </div>
                 </div>
@@ -577,7 +577,7 @@ export default function Licences() {
                         placeholder="Ex. MANDENG BAKADAL"
                         value={affiliationForm.presidentName}
                         onChange={e => setAffiliationForm({ ...affiliationForm, presidentName: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -605,7 +605,7 @@ export default function Licences() {
                         placeholder="+237 670 040 690"
                         value={affiliationForm.phone}
                         onChange={e => setAffiliationForm({ ...affiliationForm, phone: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
 
@@ -617,7 +617,7 @@ export default function Licences() {
                         placeholder="club@fecasavate.cm"
                         value={affiliationForm.email}
                         onChange={e => setAffiliationForm({ ...affiliationForm, email: e.target.value })}
-                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-white rounded-xl focus:border-feca-red outline-hidden"
+                        className="w-full py-2.5 px-3.5 bg-slate-950 border border-slate-800 text-xs text-slate-100 rounded-xl focus:border-feca-red outline-hidden"
                       />
                     </div>
                   </div>

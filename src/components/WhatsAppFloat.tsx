@@ -118,7 +118,7 @@ export default function WhatsAppFloat() {
                 placeholder={inputPlaceholder}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="flex-1 bg-slate-900 border border-slate-800 focus:border-emerald-500 text-slate-200 text-xs rounded-xl px-3 py-2 outline-hidden font-medium transition-colors"
+                className="flex-1 bg-slate-900 border border-slate-800 focus:border-emerald-500 text-slate-100 text-xs rounded-xl px-3 py-2 outline-hidden font-medium transition-colors"
               />
               <button
                 type="submit"
