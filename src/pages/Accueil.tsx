@@ -6,7 +6,8 @@
 import React, { useState } from 'react';
 import { 
   Swords, ShieldAlert, Shield, Crown, Music, Zap, 
-  MapPin, Calendar, Users, Trophy, ChevronRight, Star, Quote, ArrowRight, BellRing, Play, Award, FileText, CheckCircle, GraduationCap
+  MapPin, Calendar, Users, Trophy, ChevronRight, Star, Quote, ArrowRight, BellRing, Play, Award, FileText, CheckCircle, GraduationCap,
+  Clock, Phone, Mail, Globe, Maximize2, X, Download, ShieldCheck
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { disciplines, upcomingFights, gradeRecipients, officialExperts, membresWP } from '../data/sportData';
@@ -25,6 +26,7 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
   const [selectedVideoId, setSelectedVideoId] = useState<string>('gala-2025');
   const [memberSectionTab, setMemberSectionTab] = useState<'recipients' | 'membres'>('recipients');
+  const [selectedFlyer, setSelectedFlyer] = useState<{ src: string; title: string } | null>(null);
 
   const openVideoLightbox = (videoId: string) => {
     setSelectedVideoId(videoId);
@@ -427,142 +429,349 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
         </div>
       </section>
 
-      {/* 3. MAJOR FIGHT-CARD PROMOTION (THE MAIN EVENT NOV 29, 2025) */}
-      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
+      {/* 3. NOUVEAUX ÉVÉNEMENTS OFFICIELS FECASAVATE 2026 */}
+      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-12">
         
-        {/* Banner callout */}
-        <div className="bg-gradient-to-r from-red-950/50 via-rose-950/30 to-slate-900/60 border-2 border-feca-red rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 p-3 bg-feca-red text-white font-mono text-[9px] font-bold tracking-widest uppercase rounded-bl-xl select-none">
-            {language === 'fr' ? 'GALA EXCLUSIF' : 'EXCLUSIVE GALA'}
-          </div>
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="text-xs uppercase tracking-widest text-feca-red font-bold font-mono bg-feca-red/10 border border-feca-red/20 px-4 py-1.5 rounded-full inline-block">
+            📅 {language === 'fr' ? 'AGENDA OFFICIEL & GRANDS RENDEZ-VOUS' : 'OFFICIAL AGENDA & MAJOR EVENTS'}
+          </span>
+          <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-100 uppercase tracking-tight">
+            {language === 'fr' ? 'Les Grands Événements FECASAVATE' : 'Major FECASAVATE Events'}
+          </h2>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            {language === 'fr' 
+              ? 'Retrouvez l\'ensemble des compétitions nationales, éliminatoires et assemblées officielles organisées par la Fédération Camerounaise de Savate et Disciplines Affinitaires.'
+              : 'Find all national competitions, qualifiers, and official assemblies organized by the Cameroonian Federation of Savate and Affiliated Disciplines.'}
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            
-            {/* Main title headers */}
-            <div className="lg:col-span-5 space-y-4 text-center lg:text-left">
-              <span className="text-xs uppercase tracking-widest text-feca-gold font-bold font-mono bg-feca-gold/10 border border-feca-gold/20 px-3 py-1 rounded-full">
-                👑 {language === 'fr' ? 'SOUS LE HAUT PARRAINAGE DE LA PREMIÈRE DAME' : 'UNDER THE HIGH PATRONAGE OF THE FIRST LADY'}
-              </span>
-              
-              <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase leading-tight pt-2">
-                {language === 'fr' ? (
-                  <>GRAND ÉVÉNEMENT <br />DE SAVATE AU CAMEROUN</>
-                ) : (
-                  <>GRAND SAVATE <br />EVENT IN CAMEROON</>
-                )}
-              </h3>
+        {/* 3 Events Display List */}
+        <div className="space-y-12">
+          {([
+            {
+              id: 'finale-coupe-2026',
+              badge: language === 'fr' ? '🏆 FINALE OFFICIELLE' : '🏆 OFFICIAL FINALS',
+              title: language === 'fr' ? 'FINALE COUPE DU CAMEROUN DE SAVATE ET D.A' : 'CAMEROON SAVATE & D.A CUP FINAL',
+              tagline: 'Olembé Golden Week • ONIES & FECASAVATE',
+              date: '09 AOÛT 2026',
+              time: '08H30',
+              location: 'OLEMBE, YAOUNDÉ',
+              flyerUrl: '/images/event_finale_coupe_2026.jpeg',
+              details: [
+                {
+                  label: language === 'fr' ? 'Compétition' : 'Competition',
+                  value: language === 'fr' ? 'Finale de la Coupe du Cameroun de Savate Boxe Française et Disciplines Affinitaires' : 'Finals of the Cameroon French Savate Boxing & Affiliated Disciplines Cup'
+                },
+                {
+                  label: language === 'fr' ? 'Cadre Événementiel' : 'Event Framework',
+                  value: language === 'fr' ? 'Semaine Dorée d\'Olembé (Olembé Golden Week) sous le haut patronage de l\'ONIES' : 'Olembe Golden Week under the high patronage of ONIES'
+                }
+              ],
+              contacts: {
+                phone: '697 180 634 | 658 919 045 | +33 7 53 04 93 53',
+                email: 'info@fecasavate.cm',
+                website: 'fecasavate.cm',
+                facebook: '@fecasavate'
+              }
+            },
+            {
+              id: 'championnat-national-2026',
+              badge: language === 'fr' ? '🥊 CHAMPIONNAT NATIONAL' : '🥊 NATIONAL CHAMPIONSHIP',
+              title: language === 'fr' ? 'CHAMPIONNAT NATIONAL PHASE RETOUR' : 'NATIONAL CHAMPIONSHIP RETURN PHASE',
+              subtitle: language === 'fr' ? 'Éliminatoire à la Coupe du Cameroun de Savate et D.A' : 'Qualifier for the Cameroon Savate & D.A Cup',
+              tagline: 'Olembé Golden Week • ONIES & FECASAVATE',
+              date: '08 AOÛT 2026',
+              time: '08H30',
+              location: 'OLEMBE, YAOUNDÉ',
+              flyerUrl: '/images/event_championnat_national_2026.jpeg',
+              details: [
+                {
+                  label: language === 'fr' ? 'Phase Réglementaire' : 'Regulatory Phase',
+                  value: language === 'fr' ? 'Phase Retour Éliminatoire Officielle du Championnat National' : 'Official Return Eliminatory Phase of the National Championship'
+                },
+                {
+                  label: language === 'fr' ? 'Enjeu Majeur' : 'Major Stakes',
+                  value: language === 'fr' ? 'Qualification directe pour la Grande Finale de la Coupe du Cameroun' : 'Direct qualification for the Cameroon Cup Final'
+                }
+              ],
+              contacts: {
+                phone: '697 180 634 | 658 919 045 | +33 7 53 04 93 53',
+                email: 'info@fecasavate.cm',
+                website: 'fecasavate.cm',
+                facebook: '@fecasavate'
+              }
+            },
+            {
+              id: 'assemblee-generale-2026',
+              badge: language === 'fr' ? '📋 INSTITUTIONNEL & GOUVERNANCE' : '📋 INSTITUTIONAL & GOVERNANCE',
+              title: language === 'fr' ? 'ASSEMBLÉE GÉNÉRALE EXTRAORDINAIRE (AGE)' : 'EXTRAORDINARY GENERAL ASSEMBLY',
+              tagline: 'Fédération Camerounaise de Savate & Disciplines Affinitaires',
+              date: language === 'fr' ? 'SAMEDI 07 AOÛT 2026' : 'SATURDAY, AUGUST 7, 2026',
+              time: '10H00',
+              location: 'FONDATION KING ROBERTO, L\'UNIVERSITÉ PROTESTANTE, DJOUNGOLO : ETOA MEKI',
+              agenda: [
+                language === 'fr' ? '1. Élection du Bureau Exécutif' : '1. Election of the Executive Board',
+                language === 'fr' ? '2. Révision des Statuts' : '2. Revision of Federation Statutes'
+              ],
+              participants: language === 'fr'
+                ? 'Prendront part à cette AGE : Les représentants des régions & les responsables des corps de métiers.'
+                : 'Participants: Regional representatives & trade body leaders.',
+              flyerUrl: '/images/event_assemblee_generale_2026.jpeg',
+              contacts: {
+                phone: '697 180 634 | 658 919 045 | +33 7 53 04 93 53',
+                email: 'info@fecasavate.cm',
+                website: 'fecasavate.cm',
+                facebook: '@fecasavate'
+              }
+            }
+          ]).map((evt, index) => (
+            <motion.div
+              key={evt.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="bg-slate-950/90 border-2 border-slate-800/90 hover:border-feca-gold/50 rounded-3xl p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl transition-all duration-300 group"
+            >
+              {/* Background Ambient Glow */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-radial-gradient from-feca-gold/5 to-transparent rounded-full pointer-events-none" />
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 py-1">
-                <button
-                  onClick={() => openVideoLightbox('gala-2025')}
-                  className="inline-flex items-center gap-1.5 bg-feca-red/20 hover:bg-feca-red/40 border border-feca-red text-feca-red px-3 py-1.5 rounded-lg text-xs font-display font-bold cursor-pointer transition-all"
-                >
-                  <Play size={11} className="fill-feca-red text-feca-red" />
-                  <span>{language === 'fr' ? 'Teaser Officiel' : 'Official Teaser'}</span>
-                </button>
-                <button
-                  onClick={() => openVideoLightbox('combat-clash')}
-                  className="inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-300 px-3 py-1.5 rounded-lg text-xs font-display font-bold cursor-pointer transition-all"
-                >
-                  <Swords size={11} />
-                  <span>{language === 'fr' ? 'Choc Continentaux Elite' : 'Elite Continental Clash'}</span>
-                </button>
-              </div>
-
-              <p className="text-slate-300 text-xs leading-relaxed max-w-sm mx-auto lg:mx-0">
-                {language === 'fr' 
-                  ? "S.E. Chantal BIYA parraine deux finales mondiales spectaculaires réunissant deux continents pour un titre unifié de Boxe Française. Un rendez-vous historique à Yaoundé."
-                  : "H.E. Chantal BIYA sponsors two spectacular world finals bringing together two continents for a unified French Boxing title. An historic rendezvous in Yaounde."}
-              </p>
-
-              {/* Dynamic urgent countdown timer */}
-              <div className="max-w-sm mx-auto lg:mx-0 py-2">
-                <EventCountdown targetDateStr="2025-11-29T15:00:00" />
-              </div>
-
-              {/* Local information locator bullet */}
-              <div className="grid grid-cols-2 gap-3 pt-2 text-left bg-slate-950 border border-slate-800/80 p-3 rounded-xl max-w-sm mx-auto lg:mx-0">
-                <div>
-                  <span className="block text-[9px] font-mono text-slate-500">{language === 'fr' ? 'DATE DU CHOC' : 'CLASH DATE'}</span>
-                  <span className="block font-sans text-xs font-bold text-white flex items-center gap-1">
-                    <Calendar size={12} className="text-feca-red" /> 29 Nov 2025
-                  </span>
-                </div>
-                <div>
-                  <span className="block text-[9px] font-mono text-slate-500">{language === 'fr' ? 'EMPLACEMENT' : 'LOCATION'}</span>
-                  <span className="block font-sans text-xs font-bold text-white flex items-center gap-1">
-                    <MapPin size={12} className="text-feca-gold" /> {language === 'fr' ? 'Palais des Sports' : 'Palais des Sports Arena'}
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-2 text-[10px] text-slate-400 font-mono">
-                📞 INFOLINE: <span className="text-white">+237 697 370 486</span> / <span className="text-white">+237 690 155 182</span>
-              </div>
-            </div>
-
-            {/* Duelists Cards Display */}
-            <div className="lg:col-span-7 space-y-4">
-              <span className="text-[10px] font-mono text-slate-400 block text-center uppercase tracking-wider">
-                {language === 'fr' ? 'FIGHT CARD DU GALA MONDIAL (YAOUNDÉ)' : 'WORLD GALA FIGHT CARD (YAOUNDE)'}
-              </span>
-
-              {upcomingFights.map(fight => (
-                <div 
-                  key={fight.id} 
-                  className="bg-slate-950 border border-slate-800 hover:border-slate-700 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors"
-                >
-                  {/* Contender 1 */}
-                  <div className="flex-1 text-center sm:text-left">
-                    <span className="block text-[8px] font-mono text-slate-500">{language === 'fr' ? 'REPRÉSENTANT RECONNU' : 'RECOGNIZED CONTENDER'}</span>
-                    <span className="font-display font-extrabold text-sm text-white block">
-                      {fight.contenders.fighterA}
-                    </span>
-                    <span className="text-[11px] text-slate-400 flex items-center justify-center sm:justify-start gap-1 mt-0.5">
-                      {fight.contenders.flagA} • <span className="font-mono text-[9px] text-feca-gold">{fight.contenders.rankA}</span>
-                    </span>
-                  </div>
-
-                  {/* VS indicator pill */}
-                  <div className="shrink-0 flex flex-col items-center justify-center">
-                    <div className="w-8 h-8 rounded-full bg-feca-red/10 border border-feca-red/40 flex items-center justify-center">
-                      <span className="font-mono font-black text-[10px] text-feca-red">VS</span>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                
+                {/* LEFT SIDE: FLYER IMAGE */}
+                <div className="lg:col-span-5 relative flex justify-center">
+                  <div 
+                    onClick={() => setSelectedFlyer({ src: evt.flyerUrl, title: evt.title })}
+                    className="relative w-full max-w-[420px] rounded-2xl overflow-hidden shadow-2xl border border-slate-800 cursor-pointer group/img"
+                  >
+                    <img
+                      src={evt.flyerUrl}
+                      alt={evt.title}
+                      className="w-full h-auto object-cover transition-transform duration-500 group-hover/img:scale-105"
+                    />
+                    {/* Hover Zoom Overlay */}
+                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                      <span className="bg-slate-900/90 text-feca-gold text-xs font-mono font-bold px-3 py-1.5 rounded-xl border border-feca-gold/40 flex items-center gap-1.5 shadow-lg">
+                        <Maximize2 size={14} />
+                        {language === 'fr' ? 'Agrandir le Flyer' : 'Enlarge Flyer'}
+                      </span>
                     </div>
-                    <span className="block text-[8px] text-feca-gold font-mono tracking-wider mt-1 uppercase font-bold text-center">
-                      {fight.type}
-                    </span>
-                  </div>
-
-                  {/* Contender 2 */}
-                  <div className="flex-1 text-center sm:text-right">
-                    <span className="block text-[8px] font-mono text-slate-500">{language === 'fr' ? "CHAMPION DE L'UNION APPOSÉ" : "UNION CHAMPION CHALLENGER"}</span>
-                    <span className="font-display font-extrabold text-sm text-white block">
-                      {fight.contenders.fighterB}
-                    </span>
-                    <span className="text-[11px] text-slate-400 flex items-center justify-center sm:justify-end gap-1 mt-0.5">
-                      <span className="font-mono text-[9px] text-slate-400 mr-1">{fight.contenders.rankB}</span> {fight.contenders.flagB}
-                    </span>
                   </div>
                 </div>
-              ))}
 
-              <div className="flex justify-center sm:justify-end">
-                <button
-                  onClick={() => onPageChange('boutique')}
-                  className="px-5 py-2 rounded-lg bg-feca-gold text-slate-950 text-xs font-display font-bold hover:bg-yellow-500 transition-colors cursor-pointer"
-                >
-                  {language === 'fr' ? 'Achat Tickets de Combat 🎟️' : 'Purchase Combat Tickets 🎟️'}
-                </button>
+                {/* RIGHT SIDE: EVENT DETAILS */}
+                <div className="lg:col-span-7 space-y-5">
+                  
+                  {/* Badge & Category */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[11px] font-mono font-bold text-feca-gold uppercase tracking-wider bg-feca-gold/10 border border-feca-gold/30 px-3 py-1 rounded-lg">
+                      {evt.badge}
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-lg">
+                      {evt.tagline}
+                    </span>
+                  </div>
+
+                  {/* Title & Subtitle */}
+                  <div className="space-y-1">
+                    <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-100 uppercase leading-snug">
+                      {evt.title}
+                    </h3>
+                    {evt.subtitle && (
+                      <p className="text-feca-red font-display font-bold text-sm sm:text-base uppercase tracking-wide">
+                        {evt.subtitle}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Date, Time, Location Cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                    <div className="bg-slate-900/90 border border-slate-800/80 p-3 rounded-xl space-y-0.5">
+                      <span className="block text-[9px] font-mono text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                        <Calendar size={11} className="text-feca-red" /> {language === 'fr' ? 'DATE' : 'DATE'}
+                      </span>
+                      <span className="block font-sans text-xs font-extrabold text-white">
+                        {evt.date}
+                      </span>
+                    </div>
+
+                    <div className="bg-slate-900/90 border border-slate-800/80 p-3 rounded-xl space-y-0.5">
+                      <span className="block text-[9px] font-mono text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                        <Clock size={11} className="text-emerald-400" /> {language === 'fr' ? 'HEURE' : 'TIME'}
+                      </span>
+                      <span className="block font-mono text-xs font-extrabold text-emerald-300">
+                        {evt.time}
+                      </span>
+                    </div>
+
+                    <div className="bg-slate-900/90 border border-slate-800/80 p-3 rounded-xl space-y-0.5">
+                      <span className="block text-[9px] font-mono text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                        <MapPin size={11} className="text-feca-gold" /> {language === 'fr' ? 'LIEU' : 'LOCATION'}
+                      </span>
+                      <span className="block font-sans text-xs font-extrabold text-white truncate" title={evt.location}>
+                        {evt.location}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Agenda or Key Details */}
+                  {evt.agenda ? (
+                    <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl space-y-2">
+                      <span className="text-[10px] font-mono text-feca-gold uppercase tracking-wider font-bold block">
+                        📌 {language === 'fr' ? 'ORDRE DU JOUR :' : 'AGENDA:'}
+                      </span>
+                      <ul className="space-y-1.5 text-xs text-slate-200 font-sans">
+                        {evt.agenda.map((item, idx) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <CheckCircle size={14} className="text-emerald-400 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {evt.participants && (
+                        <p className="text-[11px] text-slate-400 italic pt-1 border-t border-slate-800/60 mt-2">
+                          {evt.participants}
+                        </p>
+                      )}
+                    </div>
+                  ) : evt.details ? (
+                    <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl space-y-2">
+                      {evt.details.map((d, idx) => (
+                        <div key={idx} className="text-xs space-y-0.5">
+                          <span className="text-[10px] font-mono text-feca-gold font-bold uppercase block">{d.label} :</span>
+                          <p className="text-slate-200 font-sans">{d.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {/* Contacts & Infoline */}
+                  <div className="pt-2 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono text-slate-400">
+                    <div className="flex items-center gap-2">
+                      <Phone size={13} className="text-feca-gold shrink-0" />
+                      <span>{evt.contacts.phone}</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <a href={`mailto:${evt.contacts.email}`} className="hover:text-white flex items-center gap-1 transition-colors">
+                        <Mail size={12} className="text-feca-red" />
+                        <span>{evt.contacts.email}</span>
+                      </a>
+                      <a href={`https://${evt.contacts.website}`} target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center gap-1 transition-colors">
+                        <Globe size={12} className="text-emerald-400" />
+                        <span>{evt.contacts.website}</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* CTAs */}
+                  <div className="pt-2 flex flex-wrap items-center gap-3">
+                    <a
+                      href={`https://wa.me/237697180634?text=Bonjour%20FECASAVATE,%20je%20souhaite%20des%20informations%20sur%20l'événement:%20${encodeURIComponent(evt.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-display font-bold text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
+                    >
+                      <Phone size={14} />
+                      <span>{language === 'fr' ? 'Infoline WhatsApp' : 'WhatsApp Infoline'}</span>
+                    </a>
+                    <button
+                      onClick={() => onPageChange('contact')}
+                      className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-display font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
+                    >
+                      {language === 'fr' ? 'Nous Contacter' : 'Contact Us'}
+                    </button>
+                  </div>
+
+                </div>
+
               </div>
-
-            </div>
-
-          </div>
+            </motion.div>
+          ))}
         </div>
 
       </section>
 
-      {/* 4. PALMARÈS SUMMARY */}
+      {/* 4. STATUTS OFFICIELS FECASAVATE (PDF DOWNLOAD SECTION) */}
+      <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-2 border-feca-gold/40 rounded-3xl p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-2xl">
+          {/* Decorative background glow & emblem */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-radial-gradient from-feca-gold/10 to-transparent rounded-full pointer-events-none" />
+          <div className="absolute -bottom-10 -right-10 opacity-5 pointer-events-none">
+            <FileText size={300} className="text-feca-gold" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Document icon preview & badge */}
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="text-xs uppercase tracking-widest text-feca-gold font-bold font-mono bg-feca-gold/10 border border-feca-gold/30 px-3.5 py-1.5 rounded-full flex items-center gap-1.5">
+                  <ShieldCheck size={14} className="text-feca-gold" />
+                  {language === 'fr' ? 'TEXTE FONDATEUR OFFICIEL' : 'OFFICIAL FOUNDING TEXT'}
+                </span>
+              </div>
+
+              <h2 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-slate-100 uppercase leading-tight">
+                {language === 'fr' ? 'Statut Finale FECASAVATE' : 'Final FECASAVATE Statutes'}
+              </h2>
+
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-md">
+                {language === 'fr' 
+                  ? 'Consultez et téléchargez le document officiel portant statuts de la Fédération Camerounaise de Savate et Disciplines Affinitaires (FECASAVATE). Réglementation, gouvernance et textes légaux certifiés.'
+                  : 'Consult and download the official statutes document of the Cameroonian Federation of Savate and Affiliated Disciplines (FECASAVATE). Certified regulations, governance and legal texts.'}
+              </p>
+            </div>
+
+            {/* Document Details & Download Action */}
+            <div className="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-2xl bg-feca-red/10 border border-feca-red/30 flex items-center justify-center shrink-0">
+                    <FileText size={28} className="text-feca-red" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-base sm:text-lg text-slate-100 uppercase">
+                      STATUT FINALE FECASAVATE .pdf
+                    </h3>
+                    <span className="text-xs font-mono text-slate-400 block mt-0.5">
+                      {language === 'fr' ? 'Document Officiel Certifié • Format PDF' : 'Certified Official Document • PDF Format'}
+                    </span>
+                  </div>
+                </div>
+
+                <a
+                  href="/docs/STATUT_FINALE_FECASAVATE.pdf"
+                  download="STATUT_FINALE_FECASAVATE.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-feca-gold via-amber-500 to-feca-gold hover:from-amber-500 hover:to-feca-gold text-slate-950 font-display font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-xl shadow-amber-950/20 hover:scale-102 flex items-center justify-center gap-2 cursor-pointer shrink-0"
+                >
+                  <Download size={16} />
+                  <span>{language === 'fr' ? 'Télécharger les Statuts (PDF)' : 'Download Statutes (PDF)'}</span>
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono text-slate-400">
+                <div className="flex items-center gap-2 bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl">
+                  <CheckCircle size={14} className="text-emerald-400 shrink-0" />
+                  <span>{language === 'fr' ? 'Homologué MINSEP' : 'MINSEP Approved'}</span>
+                </div>
+                <div className="flex items-center gap-2 bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl">
+                  <CheckCircle size={14} className="text-emerald-400 shrink-0" />
+                  <span>{language === 'fr' ? 'Normes FISav' : 'FISav Compliant'}</span>
+                </div>
+                <div className="flex items-center gap-2 bg-slate-950/60 border border-slate-800/80 p-3 rounded-xl">
+                  <CheckCircle size={14} className="text-emerald-400 shrink-0" />
+                  <span>{language === 'fr' ? 'Accès Téléchargement Libre' : 'Free Download Access'}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PALMARÈS SUMMARY */}
       <section className="max-w-[1700px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -673,6 +882,34 @@ export default function Accueil({ onPageChange, onDispatchAlert }: AccueilProps)
           </div>
         </div>
       </section>
+
+      {/* Flyer Image Zoom Modal */}
+      {selectedFlyer && (
+        <div 
+          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setSelectedFlyer(null)}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-2 flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedFlyer(null)}
+              className="absolute top-4 right-4 z-10 bg-slate-950/80 hover:bg-slate-950 text-white p-2 rounded-full border border-slate-700 transition-colors cursor-pointer"
+            >
+              <X size={20} />
+            </button>
+            <img 
+              src={selectedFlyer.src} 
+              alt={selectedFlyer.title}
+              className="max-h-[82vh] w-auto object-contain rounded-xl" 
+            />
+            <span className="text-xs font-display font-bold text-slate-300 mt-2 px-4 py-1 text-center">
+              {selectedFlyer.title}
+            </span>
+          </div>
+        </div>
+      )}
 
       <VideoLightbox 
         isOpen={lightboxOpen} 

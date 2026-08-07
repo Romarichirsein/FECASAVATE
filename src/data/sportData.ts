@@ -682,6 +682,7 @@ export const upcomingFights: FightCardMatch[] = [
 ];
 
 export const productsList: Product[] = [
+  { id: 'p0', name: 'T-Shirt Officiel Savate Boxe Française FECASAVATE', price: 3000, category: 'Tenue Officielle', imageUrl: '/images/tshirt_savate_3000f.jpeg', rating: 5, inStock: true, isPopular: true },
   { id: 'p1', name: 'Gants Officiels Savate Fecasavate - Cuir Premium', price: 45000, category: 'Equipement', imageUrl: 'https://images.unsplash.com/photo-1583473848882-f9a5bb7fd2ee?w=400&auto=format&fit=crop&q=80', rating: 5, inStock: true, isPopular: true },
   { id: 'p2', name: 'Chaussures Homologuées Savate FISav - Lions du Cameroun', price: 65000, category: 'Equipement', imageUrl: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&auto=format&fit=crop&q=80', rating: 4.8, inStock: true },
   { id: 'p3', name: 'Maillot Officiel Équipe Nationale Savate Combat', price: 25000, category: 'Tenue Officielle', imageUrl: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&auto=format&fit=crop&q=80', rating: 4.9, inStock: true, isPopular: true },
